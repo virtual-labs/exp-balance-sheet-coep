@@ -2,37 +2,113 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "What is the primary purpose of a mass balance in a process project?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "To calculate the energy requirements of a process",
+        "b": "To determine the material flows and inventories in a process",
+        "c": "To design the process equipment and piping layout",
+        "d": "To estimate the project capital and operating costs"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which of the following is a type of energy balance?",
+      "answers": {
+        "a": "Material balance",
+        "b": "Energy balance",
+        "c": "Momentum balance",
+        "d": "Mass balance"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is the law of conservation of mass?",
+      "answers": {
+        "a": "Mass cannot be created or destroyed, only converted from one form to another",
+        "b": "Energy cannot be created or destroyed, only converted from one form to another",
+        "c": "Momentum cannot be created or destroyed, only converted from one form to another",
+        "d": "None of the above"
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "What is the purpose of a process flow diagram (PFD) in a process project?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "To show the detailed piping and instrumentation diagram of a process",
+        "b": "To illustrate the overall process flow and material balances",
+        "c": "To design the process control system and instrumentation",
+        "d": "To estimate the project capital and operating costs"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which of the following is a component of a mass balance?",
+      "answers": {
+        "a": "Material inputs and outputs",
+        "b": "Energy inputs and outputs",
+        "c": "Momentum inputs and outputs",
+        "d": "All of the above"
       },
-      "correctAnswer": "c",
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is the difference between a mass balance and an energy balance?",
+      "answers": {
+        "a": "A mass balance accounts for material flows, while an energy balance accounts for energy flows",
+        "b": "A mass balance accounts for energy flows, while an energy balance accounts for material flows",
+        "c": "A mass balance is used for process design, while an energy balance is used for process operation",
+        "d": "A mass balance is used for process operation, while an energy balance is used for process design"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is the purpose of an energy balance in a process project?",
+      "answers": {
+        "a": "To determine the material flows and inventories in a process",
+        "b": "To calculate the energy requirements of a process",
+        "c": "To design the process equipment and piping layout",
+        "d": "To estimate the project capital and operating costs"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which of the following is a type of energy that is typically accounted for in an energy balance?",
+      "answers": {
+        "a": "Kinetic energy",
+        "b": "Potential energy",
+        "c": "Thermal energy",
+        "d": "All mentioned"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is the concept of 'basis' in a mass balance?",
+      "answers": {
+        "a": "The quantity of material used as a reference point for calculations",
+        "b": "The type of material being processed",
+        "c": "The process conditions under which the material is being processed",
+        "d": "The equipment used to process the material"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which of the following is a benefit of performing a mass balance and energy balance in a process project?",
+      "answers": {
+        "a": "Improved process design and operation",
+        "b": "Increased project capital and operating costs",
+        "c": "Reduced material and energy efficiencies",
+        "d": "Decreased process safety and reliability"
+      },
+      "correctAnswer": "a",
       "difficulty": "beginner"
     }
   ]
