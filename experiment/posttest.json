@@ -2,38 +2,114 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "What is the primary goal of material balance in a process?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "To minimize energy consumption",
+        "b": "To maximize profit",
+        "c": "To account for the quantities of materials entering and leaving a system",
+        "d": "To optimize process conditions"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which of the following is NOT a type of material balance?",
+      "answers": {
+        "a": "Overall material balance",
+        "b": "Component material balance",
+        "c": "Energy balance",
+        "d": "Atomic material balance"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "A process involves the reaction of 100 kg of A with 200 kg of B to form 250 kg of C and 50 kg of D. What is the degree of freedom for this system?",
+      "answers": {
+        "a": "1",
+        "b": "2",
+        "c": "3",
+        "d": "4"
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What is the difference between a closed system and an open system in material balance?",
+      "answers": {
+        "a": "Closed system has no inputs or outputs, while open system has both",
+        "b": "Closed system has inputs but no outputs, while open system has both",
+        "c": "Closed system has outputs but no inputs, while open system has both",
+        "d": "Closed system has both inputs and outputs, while open system has neither"
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "A stream has a flow rate of 100 kg/h and a composition of 80% A and 20% B. What is the flow rate of A in kg/h?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "80 kg/h",
+        "b": "100 kg/h",
+        "c": "120 kg/h",
+        "d": "200 kg/h"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is the purpose of a tie component in material balance?",
+      "answers": {
+        "a": "To calculate the flow rate of a stream",
+        "b": "To calculate the composition of a stream",
+        "c": "To provide an additional equation to solve for unknowns",
+        "d": "To simplify the material balance equations"
       },
       "correctAnswer": "c",
-      "difficulty": "beginner"
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "A process involves the mixing of two streams, each with a flow rate of 50 kg/h. If the composition of one stream is 70% A and 30% B, and the other stream is 30% A and 70% B, what is the composition of the resulting stream?",
+      "answers": {
+        "a": "50% A and 50% B",
+        "b": "60% A and 40% B",
+        "c": "40% A and 60% B",
+        "d": "70% A and 30% B"
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What is the energy balance equation for a system with no reaction?",
+      "answers": {
+        "a": "ΔE = Q - W",
+        "b": "ΔE = Q + W",
+        "c": "ΔE = ΔH - Q",
+        "d": "ΔE = ΔH + Q"
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "A process involves the heating of a stream from 20°C to 80°C. If the heat capacity of the stream is 2 kJ/kg°C, what is the energy required to heat 100 kg of the stream?",
+      "answers": {
+        "a": "120 kJ",
+        "b": "240 kJ",
+        "c": "360 kJ",
+        "d": "480 kJ"
+      },
+      "correctAnswer": "d",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What is the difference between the internal energy (U) and enthalpy (H) of a system?",
+      "answers": {
+        "a": "U is a state function, while H is a path function",
+        "b": "U is a path function, while H is a state function",
+        "c": "U includes kinetic energy, while H includes potential energy",
+        "d": "U includes potential energy, while H includes kinetic energy"
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
     }
   ]
 }
