@@ -1,11 +1,12 @@
-## Theory
-
-Mass and Energy Balance plays important role in the process design and optimization phase. The Instrumentation andControl Engineer working on automation part of process control is equally aware about the basis for this as the process control needs vital information about the process. Here are the points which are important to be captured:
+Mass and Energy Balance plays important role in the process design and optimization phase. The Instrumentation andControl Engineer working on automation 
+part of process control is equally aware about the basis for this as the process control needs vital information about the process. Here are the points
+which are important to be captured:
 
 ##### Mass Balance
 
 ###### Definition :
-Mass balance is a quantitative method to account for the masses of all species entering and leaving a system, ensuring that the total mass of inputs equals the total mass of outputs.
+Mass balance is a quantitative method to account for the masses of all species entering and leaving a system, ensuring that the total mass of inputs equals
+the total mass of outputs.
 
 ###### Importance:
 -	Ensures material conservation and accountability
@@ -34,7 +35,8 @@ Verify that the calculated flow rates and compositions are reasonable and consis
 
 ###### Energy Balance
 ###### Definition : 
-Energy balance is a quantitative method to account for the energy inputs, conversions, and outputs of a system, ensuring that the total energy input equals the total energy output.
+Energy balance is a quantitative method to account for the energy inputs, conversions, and outputs of a system, ensuring that the total energy input equals
+the total energy output.
 
 ###### Importance:
 -	Essential for process design, optimization, and energy efficiency
@@ -71,14 +73,17 @@ Verify that the calculated energy flow rates and temperatures are reasonable and
 ###### Impact of Inaccurate Results :
 
 ###### Inefficient Process Design :
-Inaccurate mass and energy balances can lead to inefficient process design, resulting in reduced productivity, increased energy consumption, and environmental impacts.
+Inaccurate mass and energy balances can lead to inefficient process design, resulting in reduced productivity, increased energy consumption, and 
+environmental impacts.
 
 ###### Safety Risks : 
 Inaccurate calculations can lead to safety risks, such as explosion hazards or equipment failures, due to inadequate design or operation.
 
 ###### Economic Losses : 
-Inaccurate results can result in economic losses due to reduced product yields, increased energy costs, or unnecessary investments in equipment and resources.
+Inaccurate results can result in economic losses due to reduced product yields, increased energy costs, or unnecessary investments in equipment and 
+resources.
 
 ###### Environmental Impacts : 
 Inaccurate mass and energy balances can lead to environmental impacts, such as pollution, waste generation, and climate change.
-By understanding the concepts of mass and energy balance, following the correct steps to calculate them, and beingaware of the probable reasons for inaccurate results, process engineers and designers can ensure accurate andefficient process design, operation, and optimization.
+By understanding the concepts of mass and energy balance, following the correct steps to calculate them, and beingaware of the probable reasons for 
+inaccurate results, process engineers and designers can ensure accurate andefficient process design, operation, and optimization.

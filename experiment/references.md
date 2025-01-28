@@ -1,5 +1,3 @@
-## References
-
 -	Chemical Engineering Design: Principles, Practice and Economics of Plant and Process Design by Gavin Towler and Ray Sinnott (2013)
 
 -	Material and Energy Balance by D. M. Himmelblau and J. B. Riggs (2012)
