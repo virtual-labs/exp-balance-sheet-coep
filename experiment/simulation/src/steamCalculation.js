@@ -174,7 +174,7 @@ function steam() {
 
 					$("#submit20").prop("disabled", true);
 					$("#qhx").prop("disabled", true);
-					//	          $("#qhxDiv").prop("hidden",false);
+						          $("#nextl3").prop("hidden",false);
 					scrollToBottom();
 					id = 0;
 				} else if (qxValEnter != qxVal) {
@@ -219,7 +219,7 @@ function steam() {
 
 					$("#submit20").prop("disabled", true);
 					$("#qhx").prop("disabled", true);
-					//	          $("#qhxDiv").prop("hidden",false);
+						          $("#nextl3").prop("hidden",false);
 					scrollToBottom();
 					id = 0;
 				} else {

@@ -109,6 +109,17 @@ energyMass();
 // water();
 //steam();
 //finalAComplete();
+
+function scrollToBottom() {
+	const box = document.getElementById("instructionBox");
+	if (box) {
+		box.scrollTo({
+			top: box.scrollHeight,
+			behavior: "smooth"
+		});
+	}
+}
+
 </script>
 
 </html>
