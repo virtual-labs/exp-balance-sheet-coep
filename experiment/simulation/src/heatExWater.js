@@ -293,7 +293,7 @@ function water() {
 	$("#submit11").click(function() {
 		var firstTerm = Math.pow(reynolds, 0.8);
 		var secTerm = Math.pow(prandVal, 0.4);
-		nuslet = (0.023 * firstTerm * secTerm).toFixed(3);
+		nuslet = (0.023 * firstTerm * secTerm).toFixed(2);
 		nuslet = parseFloat(nuslet);
 
 		var nusletEnter = $("#nuslet").val();
