@@ -1,5 +1,5 @@
-var qxVal = 19393.54;
-var hfgVal = 2165000;
+//var qxVal = 19393.54;
+//var hfgVal = 2165000;
 
 function finalAComplete() {
 
