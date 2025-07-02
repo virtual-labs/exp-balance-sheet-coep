@@ -577,7 +577,7 @@ function steam() {
 		var sub1 = hgTemp - 129;
 		var mu = 0.4658 * Math.pow(10, -3);
 
-		var deno = (mu * 0.03 * sub1).toFixed(5);
+		var deno = (mu * 0.03 * sub1);
 		deno = parseFloat(deno);
 
 		var finDiv = num / deno;
