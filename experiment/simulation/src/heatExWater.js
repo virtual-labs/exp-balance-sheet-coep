@@ -65,14 +65,14 @@ function water() {
                   Thermal conductivity of water (k_water) = 0.6 W/mK</span>
 	</div>
 	
-	<div class="col-7 instruction-box1" style="overflow-y: auto; height: 500px;" id="instructionBox">
+	<div class="col-7 instruction-box1" style="overflow-y: auto; height: 460px;" id="instructionBox">
 	<center><span class="fw-bold headingExp" style="font-family: emoji;
     font-size: 20px;
     word-spacing: 1px; ">CALCULATIONS   </span></center>
     
     <div class="row justify-content-center mt-5" style="display:flex;" >
      <div class="col-6 ">
-    <label style="font-family: emoji;font-size: 20px;word-spacing: 1px;">Calculate flow rate of water in m<sup>3</sup>/s : </label>
+    <label style="font-family: emoji;font-size: 20px;word-spacing: 1px;">Calculate flow rate of water (m<sup>3</sup>/s) : </label>
      </div>
      <div class="col-4" style="display:flex;">
     <input type="number" id="flowRate" style="width:60%; margin-left:10px;" class="form-control" /> 
@@ -110,7 +110,7 @@ function water() {
     
     <div class="row justify-content-center mt-5" style="display:flex;" id = "reynoldDiv" hidden>
      <div class="col-6 ">
-    <label style="font-family: emoji;font-size: 20px;word-spacing: 1px;">Calculate Reynold's number for water Re<sub>water</sub> : </label>
+    <label style="font-family: emoji;font-size: 20px;word-spacing: 1px;">Calculate Reynold's number for water (Re<sub>water</sub>) : </label>
     </div>
     <div class="col-4" style="display:flex;">
     <input type="number" id="reynold" style="width:100%;" class="form-control" />
@@ -122,7 +122,7 @@ function water() {
     
     <div class="row justify-content-center mt-5" style="display:flex;" id = "pDiv" hidden>
      <div class="col-6 ">
-    <label style="font-family: emoji;font-size: 20px;word-spacing: 1px;">Calculate Prandtl number for water Pr<sub>water</sub> : </label>
+    <label style="font-family: emoji;font-size: 20px;word-spacing: 1px;">Calculate Prandtl number for water (Pr<sub>water</sub>) : </label>
     </div>
     <div class="col-4" style="display:flex;">
     <input type="number" id="prand" style="width:100%;" class="form-control" />
@@ -146,7 +146,7 @@ function water() {
     
     <div class="row justify-content-center mt-5" style="display:flex;" id = "heatDiv" hidden>
      <div class="col-6 ">
-    <label style="font-family: emoji;font-size: 20px;word-spacing: 1px;">Heat transfer coefficient of water h<sub>i</sub> : </label>
+    <label style="font-family: emoji;font-size: 20px;word-spacing: 1px;">Heat transfer coefficient of water (h<sub>i</sub>) : </label>
     </div>
     <div class="col-4" style="display:flex;">
     <input type="number" id="heat" style="width:100%;" class="form-control" />
@@ -705,7 +705,7 @@ function water() {
 		var mul = 0.0079 * 0.0079;
 		area = (3.14 * mul);
 		area = area * Math.pow(10, 4);
-		area = area.toFixed(4);
+		area = area.toFixed(2);
 		area = parseFloat(area);
 
 		var areaEnter = $("#area").val();
@@ -810,7 +810,7 @@ function water() {
 		var div = wfRate / mul;
 		flowRate = div * (Math.pow(10, 4));
 
-		flowRate = flowRate.toFixed(4);
+		flowRate = flowRate.toFixed(2);
 		flowRate = parseFloat(flowRate);
 
 		var flowRateEnter = $("#flowRate").val();

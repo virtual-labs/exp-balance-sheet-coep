@@ -21,29 +21,29 @@ function energyMass() {
 	var htm = '<div class="row justify-content-center" style="margin-top:-20px;display:flex;">'
 		+ '<div class="col-md-8 instruction-box1 " style="display:flex;">'
 		+ '<div class="col-5 ">'
-		+ '<label style="font-weight: 600;font-family: emoji;font-size: 20px;word-spacing: 1px;">Find the Enthalpy of steam (h<sub>g</sub>) kJ/kg : </label>'
+		+ '<label style="font-weight: 600;font-family: emoji;font-size: 20px;word-spacing: 1px;">Find the Enthalpy of steam h<sub>g</sub> (kJ/kg) : </label>'
 		+ '</div>'
 		+ '<div class="col-3">'
 		+ '<input type="number" id="hg" style="width:100%; " class="form-control" />'
 		+ '</div>'
 		+ '<div class="col-3">'
 		+ '<button type="submit" class="btn btn-secondary"  id="submit1"  style="height:90%;width:65px;margin-top: 0px; " >Submit</button>'
-		+ '<button type="submit" class="btn btn-info"  id="refer1"  style="height:90%;margin-top: 0px; margin-left:10px;" >Refer</button>'
+		+ '<button type="submit" class="btn btn-info"  id="refer1"  style="height:32px;margin-top: 0px; margin-left:10px;" >Refer</button>'
 		+ '</div>'
 		+ '</div>'
 		+ '</div>'
 
-		+ '<div class="row justify-content-center" style="margin-top:-20px;display:flex;" id="hfdiv" hidden>'
+		+ '<div class="row justify-content-center" style="margin-top:-20px;display:flex;" id="hfdiv" hidden	>'
 		+ '<div class="col-md-8 instruction-box1 " style="display:flex;">'
 		+ '<div class="col-5 ">'
-		+ '<label style="font-weight: 600;font-family: emoji;font-size: 20px;word-spacing: 1px;">Find the Enthalpy of feed water (h<sub>f</sub>) kJ/kg : </label>'
+		+ '<label style="font-weight: 600;font-family: emoji;font-size: 20px;word-spacing: 1px;">Find the Enthalpy of feed water h<sub>f</sub> (kJ/kg) : </label>'
 		+ '</div>'
 		+ '<div class="col-3">'
 		+ '<input type="number" id="hf" style="width:100%; " class="form-control" />'
 		+ '</div>'
 		+ '<div class="col-3">'
 		+ '<button type="submit" class="btn btn-secondary"  id="submit2"  style="height:90%;width:65px;margin-top: 0px; " >Submit</button>'
-		+ '<button type="submit" class="btn btn-info"  id="refer2"   style="height:90%;margin-left:10px;" >Refer</button>'
+		+ '<button type="submit" class="btn btn-info"  id="refer2"   style="height:32px;margin-left:10px;" >Refer</button>'
 		+ '</div>'
 		+ '</div>'
 		+ '</div>'
@@ -51,7 +51,7 @@ function energyMass() {
 		+ '<div class="row justify-content-center" style="margin-top:-20px;display:flex;" id="Msteemdiv" hidden>'
 		+ '<div class="col-md-8 instruction-box1 " style="display:flex;">'
 		+ '<div class="col-5 ">'
-		+ '<label style="font-weight: 600;font-family: emoji;font-size: 20px;word-spacing: 1px;">Select m<sub>steam</sub> kg/hr : </label>'
+		+ '<label style="font-weight: 600;font-family: emoji;font-size: 20px;word-spacing: 1px;">Select Mass flow rate for steam m<sub>steam</sub> (kg/hr) : </label>'
 		+ '</div>'
 		+ '<div class="col-3">'
 		+ '<select name="" id="msteem" style="width:100%; size="5";overflow-y: auto;">';
@@ -65,7 +65,7 @@ function energyMass() {
 		+ '</div>';
 	htm += ''
 		+ '<div class="col-3">'
-		+ '<button type="submit" class="btn btn-secondary"  id="submit3"  style="height:90%;width:80px;margin-top: 0px;" >Submit</button>'
+		+ '<button type="submit" class="btn btn-secondary"  id="submit3"  style="height:32px;width:80px;margin-top: 0px;" >Submit</button>'
 		+ '</div>'
 	htm += '<label style="margin-left:50px;font-weight: 600;font-family: emoji;font-size: 20px;word-spacing: 1px;" id="effVal" hidden></label>'
 
@@ -84,7 +84,7 @@ function energyMass() {
 		+ '</div>'
 		+ '<div class="col-3">'
 		//                        +'<button type="submit" class="btn btn-info"  id="refer2"   style="height:55%;width:10%;margin-top: 0px; margin-left:10px;" >Refer</button>'
-		+ '<button type="submit4" class="btn btn-secondary"  id="submit4"  style="height:38%;width:80px;margin-top: 0px;" >Submit</button>'
+		+ '<button type="submit4" class="btn btn-secondary"  id="submit4"  style="height:32px;width:80px;margin-top: 0px;" >Submit</button>'
 		+ '</div>'
 		+ '</div>'
 		+ '</div>'
@@ -99,15 +99,15 @@ function energyMass() {
 		+ '</div>'
 		+ '<div class="col-3">'
 		//                        +'<button type="submit" class="btn btn-info"  id="refer2"   style="height:55%;width:10%;margin-top: 0px; margin-left:10px;" >Refer</button>'
-		+ '<button type="submit5" class="btn btn-secondary"  id="submit5"  style="height:100%;width:80px;margin-top: 0px;" >Submit</button>'
+		+ '<button type="submit5" class="btn btn-secondary"  id="submit5"  style="height:32px;width:80px;margin-top: 0px;" >Submit</button>'
 		+ '</div>'
 		+ '</div>'
 		+ '</div>'
 
-		+ '<div class="row justify-content-center" style="margin-top:-20px;"  >'
+		+ '<div class="row justify-content-center"  id="nextl1" style="margin-top:-20px;"  hidden>'
 
 		+ '<div class="col-md-8 instruction-box1 text-center">'
-		+ '<button type="submit5" class="btn btn-primary"  id="nextl1"  style="height:100%;width:80px;margin-top: 0px; margin-left:10px;" hidden>Next</button>'
+		+ '<button type="submit5" class="btn btn-primary"   style="height:32px;width:80px;margin-top: 0px; margin-left:10px;">Next</button>'
 		+ '</div>'
 		+ '</div>'
 		;
@@ -347,10 +347,11 @@ function energyMass() {
 			$("#msteem").prop("disabled", true);
 			$("#submit3").prop("disabled", true);
 			$("#efficiency").prop("disabled", true);
+			$("#qdiv").prop("hidden", false);
 		} else {
 			Swal.fire({
 				icon: 'error',
-				title: 'Incorrect value',
+				title: 'Select the Appropriate value',
 				confirmButtonText: 'Try Again',
 				customClass: {
 					icon: 'custom-icon',
@@ -361,9 +362,9 @@ function energyMass() {
 				}
 			});
 		}
-		$("#effVal").prop("hidden", false);
-		$("#energyBalDiv").prop("hidden", false);
-		$("#qdiv").prop("hidden", false);
+//		$("#effVal").prop("hidden", false);
+//		$("#energyBalDiv").prop("hidden", false);
+		
 	});
 
 	$("#submit1").click(function() {
