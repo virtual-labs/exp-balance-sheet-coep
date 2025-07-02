@@ -1,3 +1,6 @@
+var qxVal;
+var hfgVal;
+
 function steam() {
 
 //	hgTemp = getRandomNumber(130, 136);
@@ -59,8 +62,8 @@ function steam() {
     <input type="number" id="hfg" style="width:100%; " class="form-control" /> 
     </div>
     <div class="col-3">
-    <button type="submit" class="btn btn-info"  id="refer3"  style="height:30px;width:40%;margin-top: 0px;">Refer</button>
-    <button type="submit" class="btn btn-secondary"  id="submit14"  style="height:30px;width:45%;margin-top: 0px; margin-left:10px;" >Submit</button>                              
+    <button type="submit" class="btn btn-info"  id="refer3"  style="height:30px;width:56px;margin-top: 0px;">Refer</button>
+    <button type="submit" class="btn btn-secondary"  id="submit14"  style="height:30px;width:65px;margin-top: 0px;" >Submit</button>                              
     </div>
     </div>
     
@@ -139,7 +142,7 @@ function steam() {
 
 	var logMean;
 	var smVal;
-	var qxVal;
+	
 
 	$("#nextl3").click(function() {
 		finalAComplete();
@@ -682,7 +685,7 @@ function steam() {
 
 
 	$("#refer3").click(function() {
-		let pageNumber = 8;
+		let pageNumber = 5;
 
 		Swal.fire({
 			title: 'PDF Viewer',
@@ -702,7 +705,7 @@ function steam() {
 	})
 
 	var arrhfg = [];
-	var hfgVal;
+	
 	var id = 1;
 
 
