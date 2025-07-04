@@ -1,96 +1,67 @@
-Here are the procedures for interpreting and preparing energy balance and material balance sheets for a process plant as per standard:
+## PROCEDURE
 
-##### Energy Balance
+#### Note : Truncate the final calculated value to 2 digits after the decimal point in all calculations
 
-###### Step 1 : Gather Data
+### I.  Boiler calculations
+- Find the enthalpy of steam h<sub>g</sub> (kJ/kg) at the given temperature. Click on '**Refer**' to refer the value and submit your answer
+- Similarly, find the Enthalpy of feed water h<sub>f</sub> (kJ/kg) and submit your answer 
+- Select Mass flow rate for steam m<sub>steam</sub> (kg/hr) and submit your answer
+- Calculate energy required for feedwater to reach boiler at given temperature at startup phase of boiler Q(W), use the below formula for calculation and submit your answer <br>
+    Q = M<sub>steam</sub> &times; C<sub>p<sub>water</sub></sub> &times; &Delta;T
+- Calculate time required t (min) using below formula and submit your answer <br>
+    t = Q / Q<sub>electric</sub>
+- Click on '**Next**' and proceed to the next level
 
-Collect relevant data on energy inputs and outputs, including:
--	Fuel consumption (e.g., natural gas, fuel oil, coal)
--	Electricity consumption
--	Steam generation and usage
--	Heat transfer fluids (e.g., hot oil, thermal fluid)
--	Cooling systems (e.g., cooling water, air cooling)
--	Review process flow diagrams (PFDs), piping and instrumentation diagrams
-	
-(P&IDs), and other process documents to identify energy-using equipment and systems.
 
-###### Step 2 : Identify Energy Streams
+ ### II.  Heat exchanger water side calculations  
+ -   Calculate flow rate of water (m<sup>3</sup>/s) using the below formula and submit your answer <br>
+    flow<sub>water</sub> = m<sub>water</sub>/(3600 &times; ρ<sub>water</sub>)   
+-  Calculate area of inner pipe A<sub>water</sub> using the below formula and submit your answer <br> Area = &pi; &times; r<sub>1</sub><sup>2</sup>, where &pi; = 3.14
+- Calculate speed of water V<sub>water</sub> using the below formula and submit your answer <br>
+   V<sub>water</sub> = flow<sub>water</sub>/A<sub>water</sub> 
+- Calculate  Reynold's number for water (Re<sub>water</sub>) using the below formula and submit your answer <br> 
+Re<sub>water</sub> = (V<sub>water</sub> × r<sub>1</sub> × 2 × ρ<sub>water</sub>) / μ<sub>water</sub>
+- Calculate Prandtl number for water (Pr<sub>water</sub>) using the below formula and submit your answer <br>
+ Pr<sub>water</sub> = ( μ<sub>water</sub> &times; C<sub>p<sub>water</sub></sub>) / k<sub>water</sub>
+ - Calculate Nusselt number for water (Nu<sub>water</sub> for heating) Nu<sub>water</sub> using the below formula and submit your answer <br>
+ N<sub>u<sub>water</sub></sub> = 0.023 ( Re<sub>water</sub><sup>0.8</sup> Pr<sub>water</sub><sup>0.4</sup>)
+ - Calculate heat transfer coefficient of water (h<sub>i</sub>) using below formula and submit your answer <br>
+  h<sub>i</sub> = (Nu<sub>water</sub> &times; k<sub>water</sub>) / 2 r<sub>1</sub>
+- Click on '**Next**' and proceed to the next level
 
-Identify the various energy streams in the process, including:
--	Heat energy (e.g., steam, hot oil, furnace heat)
--	Mechanical energy (e.g., electricity, compressed air)
--	Chemical energy (e.g., fuel, reactants)
--	Categorize energy streams as either:
--	Energy inputs (e.g., fuel, electricity)
--	Energy outputs (e.g., steam, hot oil)
--	Energy losses (e.g., heat losses, electrical losses)
-	
-###### Step 3 : Calculate Energy Flows
 
-Calculate the energy flows for each energy stream, including:
--	Energy input rates (e.g., kW, BTU/h)
--	Energy output rates (e.g., kW, BTU/h)
--	Energy loss rates (e.g., kW, BTU/h)
-Use standard units and conversion factors, such as:
--	1 kW = 3413 BTU/h
--	1 ton of steam = 12,000 BTU/h
-	
-###### Step 4 : Prepare the Energy Balance Sheet
+ ### III.  Heat exchanger steam side calculations 
+ - Find h<sub>fg</sub> (J) at steam from steam table at the given temperature. Click on '**Refer**' to refer the value and submit your answer
+ - Calculate heat transfer coefficient of steam for pure condensation h<sub>o</sub> (W/m<sup>2</sup>.<sup>o</sup>C) using the below formula and submit your answer <br>
 
-Prepare the energy balance sheet, including:
--	Energy inputs (fuel, electricity, etc.)
--	Energy outputs (steam, hot oil, etc.)
--	Energy losses (heat losses, electrical losses, etc.)
--	Net energy usage (energy inputs - energy outputs - energy losses)
-	
-Present the energy balance sheet in a clear and concise format, using tables, charts, or graphs as necessary.
+    ![hoFormula](images/hoFormula.png)
 
-##### Material Balance
+- Calculate Overall heat transfer coefficient U<sub>o</sub> (W/m<sup>2</sup>.<sup>o</sup>C) using the below formula and submit your answer <br>
 
-###### Step 1: Gather Data
+     ![UoFormula](images/uoFormula.png)
 
-Collect relevant data on material inputs and outputs, including:
--	Raw materials (e.g., feedstocks, reactants)
--	Products (e.g., final products, by-products)
--	Intermediate streams (e.g., process streams, recycle streams)
--	Waste streams (e.g., effluent, emissions)
--	Review process flow diagrams (PFDs), piping and instrumentation diagrams (P&IDs), and other process documents to identify material streams and flow rates.
-	
-###### Step 2 : Identify Material Streams
+- Calculate Log mean temperature difference &Delta;T<sub>LM</sub> (<sup>o</sup>C) using the below formula and submit your answer <br>
+       
+     ![UoFormula](images/logMeanFormula.png)  
 
-Identify the various material streams in the process, including:
--	Feed stocks (e.g., raw materials, reactants)
--	Products (e.g., final products, by-products)
--	Intermediate streams (e.g., process streams, recycle streams)
--	Waste streams (e.g., effluent, emissions)
--	Categorize material streams as either:
--	Material inputs (e.g., feedstocks, reactants)
--	Material outputs (e.g., products, by-products)
--	Material losses (e.g., waste streams, emissions)
-	
-Step 3 : Calculate Material Flows
-Calculate the material flows for each material stream, including:
--	Material input rates (e.g., kg/h, lb/h)
--	Material output rates (e.g., kg/h, lb/h)
--	Material loss rates (e.g., kg/h, lb/h)
-	
-Use standard units and conversion factors, such as:
-1 kg = 2.20462 lb
-1 ton = 2000 lb
+ - Calculate Surface area of inner tube SA (m<sup>3</sup>) using the below formula and submit your answer <br>
+     SA = &pi; &times; 2 &times; r<sub>1</sub> &times; l
+ - Calculate maximum heat exchanges heat transfer Q<sub>hx</sub> using the below formula and submit your answer <br> Q<sub>hx</sub> = U<sub>o</sub> &times; SA &times; &Delta;T<sub>LM</sub>
+- Click on '**Next**' and proceed to the next level
 
-###### Step 4 : Prepare the Material Balance Sheet
 
-Prepare the material balance sheet, including:
--	Material inputs (feed stocks, reactants, etc.)
--	Material outputs (products, by-products, etc.)
--	Material losses (waste streams, emissions, etc.)
--	Net material usage (material inputs - material outputs - material losses)
--	Present the material balance sheet in a clear and concise format, using tables, charts, or graphs as necessary.
-	
-International standards that may be relevant to energy balance and material balance sheet preparation include :
--	ISO 50001:2018 - Energy management systems
--	ANSI/ASME PTC 19.1:2013 - Test uncertainty
--	API RP 560:2016 - Fired heaters for general refinery service
--	OSHA 29 CFR 1910.119: Process safety management of highly hazardous chemicals
-	
-Note : The specific steps and standards may vary depending on the industry, location, and specific requirements of the process plant.
+  ### IV. Outlet temperature of water calculations   
+- Calculate Maximum possible heat from steam given Q<sub>steam</sub> using the below formula and submit your answer <br>
+ Q<sub>steam</sub> = (m<sub>steam</sub> &times; h<sub>fg</sub>) + (m<sub>steam</sub> &times; C<sub>p<sub>water</sub></sub> &times; (T<sub>steam</sub> - T<sub>condensate</sub>))
+ - Calculate Actual Energy transfer Q<sub>Actual</sub> using the below formula and submit your answer <br>
+    Q<sub>Actual</sub> = min (Q<sub>hx</sub> , Q<sub>steam</sub>)
+  - Calculate Temperature of outlet water T<sub>out</sub> using the below formula and submit your answer <br>
+      
+      ![tOutFormula](images/toutFormula.png) 
+
+- Select the appropriate to get T<sub>out</sub> to 60 <sup>o</sup>C and submit your answer    
+- Click on '**Result**' for performance accessment
+
+
+
+
