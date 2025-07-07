@@ -2,9 +2,11 @@ var hgTemp;
 var wfRate;
 var tfFeed;
 var msteemVal;
-
+var timerMasterJson = {};
+var resultJson = {};
+var enMass = 0;
 function energyMass() {
-
+    seconds = 0;
 	hgTemp = getRandomNumber(130, 136);
 	wfRate = getRandomNumber(200, 800);
 	tfFeed = getRandomNumber(20, 28);
@@ -135,6 +137,12 @@ function energyMass() {
 	//    $("#nextl1").prop("hidden", false)
 	$("#nextl1").click(function() {
 		water();
+		resultJson.energyMass = enMass;
+        console.log(resultJson);
+        
+        timerMasterJson.energyTime = $("#counter").text();
+		console.log(timerMasterJson);
+		updateCounter();
 	})
 
 	$("#submit5").click(function() {
@@ -170,6 +178,7 @@ function energyMass() {
 					id = 0;
                     scrollToBottom();
 				} else if (timeReqEnter != timeReq) {
+					enMass++;
 					Swal.fire({
 						icon: 'error',
 						title: 'Incorrect value',
@@ -187,7 +196,7 @@ function energyMass() {
 
 
 			} else if (id == 4) {
-
+                     enMass++;
 				Swal.fire({
 					title: 'Formula',
 					html: `<div>
@@ -271,6 +280,7 @@ function energyMass() {
 					id = 0;
 
 				} else if (qValEnter != qVal) {
+					enMass++;
 					Swal.fire({
 						icon: 'error',
 						title: 'Incorrect value',
@@ -288,7 +298,7 @@ function energyMass() {
 
 
 			} else if (id == 4) {
-
+              enMass++;
 				Swal.fire({
 					title: 'Formula',
 					html: `<div>
@@ -397,6 +407,7 @@ function energyMass() {
 					id = 0;
 
 				} else if (hgValEnter != hgValGet) {
+					enMass++;
 					Swal.fire({
 						icon: 'error',
 						title: 'Incorrect value',
@@ -414,6 +425,7 @@ function energyMass() {
 
 
 			} else if (id == 4) {
+				enMass++;
 				var pageNumber = 8;
 				Swal.fire({
 					title: 'PDF Viewer',
@@ -494,6 +506,7 @@ function energyMass() {
 					$("#Msteemdiv").prop("hidden", false);
 					id = 0;
 				} else if (hfValEnter != hfValGet) {
+					enMass++;
 					Swal.fire({
 						icon: 'error',
 						title: 'Incorrect value',
@@ -511,6 +524,7 @@ function energyMass() {
 
 
 			} else if (id == 4) {
+				enMass++;
 				var pageNumber = 5;
 				Swal.fire({
 					title: 'PDF Viewer',

@@ -1,8 +1,10 @@
 var qxVal;
 var hfgVal;
-
+var timerMasterJson = {};
+var resultJson = {};
+var steam1 = 0;
 function steam() {
-
+seconds = 0;
 //	hgTemp = getRandomNumber(130, 136);
 //	wfRate = getRandomNumber(200, 800);
 //	tfFeed = getRandomNumber(20, 28);
@@ -146,6 +148,12 @@ function steam() {
 
 	$("#nextl3").click(function() {
 		finalAComplete();
+		resultJson.steamEx = steam1;
+        console.log(resultJson);
+        
+        timerMasterJson.steamTime = $("#counter").text();
+		console.log(timerMasterJson);
+		updateCounter();
 	})
 
 	$("#submit20").click(function() {
@@ -181,6 +189,7 @@ function steam() {
 					scrollToBottom();
 					id = 0;
 				} else if (qxValEnter != qxVal) {
+					steam1++;
 					Swal.fire({
 						icon: 'error',
 						title: 'Incorrect value',
@@ -198,7 +207,7 @@ function steam() {
 
 
 			} else if (id == 4) {
-
+               steam1++;
 				Swal.fire({
 					title: 'Formula',
 					html: `<div>
@@ -283,6 +292,7 @@ function steam() {
 					scrollToBottom();
 					id = 0;
 				} else if (smValEnter != smVal) {
+					steam1++;
 					Swal.fire({
 						icon: 'error',
 						title: 'Incorrect value',
@@ -300,7 +310,7 @@ function steam() {
 
 
 			} else if (id == 4) {
-
+steam1++;
 				Swal.fire({
 					title: 'Formula',
 					html: `<div>
@@ -390,6 +400,7 @@ function steam() {
 					scrollToBottom();
 					id = 0;
 				} else if (logMeanEnter != logMean) {
+					steam1++;
 					Swal.fire({
 						icon: 'error',
 						title: 'Incorrect value',
@@ -407,7 +418,7 @@ function steam() {
 
 
 			} else if (id == 4) {
-
+steam1++;
 				Swal.fire({
 					title: 'Formula',
 					html: `<div>
@@ -498,6 +509,7 @@ function steam() {
 					scrollToBottom();
 					id = 0;
 				} else if (uoValEnter != uoVal) {
+					steam1++;
 					Swal.fire({
 						icon: 'error',
 						title: 'Incorrect value',
@@ -515,7 +527,7 @@ function steam() {
 
 
 			} else if (id == 4) {
-
+steam1++;
 				Swal.fire({
 					title: 'Formula',
 					html: `<div>
@@ -614,6 +626,7 @@ function steam() {
 					scrollToBottom();
 					id = 0;
 				} else if (hoValEnter != hoVal) {
+					steam1++;
 					Swal.fire({
 						icon: 'error',
 						title: 'Incorrect value',
@@ -631,7 +644,7 @@ function steam() {
 
 
 			} else if (id == 4) {
-
+steam1++;
 				Swal.fire({
 					title: 'Formula',
 					html: `<div>
@@ -746,6 +759,7 @@ function steam() {
 					$("#heatTrasDiv").prop("hidden", false);
 					id = 0;
 				} else if (hfgValEnter != hfgVal) {
+					steam1++;
 					Swal.fire({
 						icon: 'error',
 						title: 'Incorrect value',
@@ -763,6 +777,7 @@ function steam() {
 
 
 			} else if (id == 4) {
+				steam1++;
 				var pageNumber = 8;
 				Swal.fire({
 					title: 'PDF Viewer',

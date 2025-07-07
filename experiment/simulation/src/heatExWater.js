@@ -1,9 +1,11 @@
 var vstring = "";
 var vstringVal;
 var heatVal;
-
+var timerMasterJson = {};
+var resultJson = {};
+var heatEx = 0;
 function water() {
-
+	seconds = 0;
 //	hgTemp = getRandomNumber(130, 136);
 //	wfRate = getRandomNumber(200, 800);
 //	tfFeed = getRandomNumber(20, 28);
@@ -60,9 +62,9 @@ function water() {
                  <br> Inner radius of inner pipe (r<sub>1</sub>) = 0.0079 m,<br>
                   Outer radius of inner pipe (r<sub>2</sub>) = 0.01067 m, <br>
                   Length of heat exchanger (l) = 3.8 m ,<br>
-                  Dynamic viscosity of water (mu_water) at <center>`+ tfFeed + `<sup>o</sup>C = ` + vstring + `,</center>
+                  Dynamic viscosity of water (mu<sub>water</sub>) at <center>`+ tfFeed + `<sup>o</sup>C = ` + vstring + `,</center>
                   Density of water = 1000 kg/m<sup>2</sup>,<br>
-                  Thermal conductivity of water (k_water) = 0.6 W/mK</span>
+                  Thermal conductivity of water (k<sub>water</sub>) = 0.6 W/mK</span>
 	</div>
 	
 	<div class="col-7 instruction-box1" style="overflow-y: auto; height: 460px;" id="instructionBox">
@@ -188,6 +190,12 @@ function water() {
 
 	$("#nextl2").click(function() {
 		steam();
+		resultJson.heatExWater = heatEx;
+        console.log(resultJson);
+        
+        timerMasterJson.heatExWaterTime = $("#counter").text();
+		console.log(timerMasterJson);
+		updateCounter();
 	})
 
 	$("#submit12").click(function() {
@@ -223,6 +231,8 @@ function water() {
 					id = 0;
 					scrollToBottom();
 				} else if (heatValEnter != heatVal) {
+					heatEx++;
+					
 					Swal.fire({
 						icon: 'error',
 						title: 'Incorrect value',
@@ -240,7 +250,7 @@ function water() {
 
 
 			} else if (id == 4) {
-
+                   heatEx++;
 				Swal.fire({
 					title: 'Formula',
 					html: `<div>
@@ -325,6 +335,8 @@ function water() {
 					id = 0;
 					scrollToBottom();
 				} else if (nusletEnter != nuslet) {
+					heatEx++;
+					
 					Swal.fire({
 						icon: 'error',
 						title: 'Incorrect value',
@@ -342,7 +354,7 @@ function water() {
 
 
 			} else if (id == 4) {
-
+                   heatEx++;
 				Swal.fire({
 					title: 'Formula',
 					html: `<div>
@@ -427,6 +439,8 @@ function water() {
 					id = 0;
 					scrollToBottom();
 				} else if (prandValEnter != prandVal) {
+					heatEx++;
+					
 					Swal.fire({
 						icon: 'error',
 						title: 'Incorrect value',
@@ -444,11 +458,11 @@ function water() {
 
 
 			} else if (id == 4) {
-
+                  heatEx++;
 				Swal.fire({
 					title: 'Formula',
 					html: `<div>
-                    <img src='images/reynoldFormula.png' class='img-fluid' 
+                    <img src='images/prFormula.png' class='img-fluid' 
                          style='border-style: double; border-color: black; display: block; margin: 10px auto; width: 100%; max-width: 1200px;'>
                </div>`,
 					width: '40%',
@@ -531,6 +545,8 @@ function water() {
 					scrollToBottom();
 
 				} else if (reynoldEnter != reynolds) {
+					heatEx++;
+					
 					Swal.fire({
 						icon: 'error',
 						title: 'Incorrect value',
@@ -548,7 +564,7 @@ function water() {
 
 
 			} else if (id == 4) {
-
+               heatEx++;
 				Swal.fire({
 					title: 'Formula',
 					html: `<div>
@@ -633,6 +649,8 @@ function water() {
 					id = 0;
                     scrollToBottom();
 				} else if (speedEnter != speed) {
+					heatEx++;
+					
 					Swal.fire({
 						icon: 'error',
 						title: 'Incorrect value',
@@ -650,7 +668,7 @@ function water() {
 
 
 			} else if (id == 4) {
-
+                heatEx++;
 				Swal.fire({
 					title: 'Formula',
 					html: `<div>
@@ -737,6 +755,8 @@ function water() {
 					id = 0;
                     scrollToBottom();
 				} else if (areaEnter != area) {
+					heatEx++;
+					
 					Swal.fire({
 						icon: 'error',
 						title: 'Incorrect value',
@@ -754,7 +774,7 @@ function water() {
 
 
 			} else if (id == 4) {
-
+                  heatEx++;
 				Swal.fire({
 					title: 'Formula',
 					html: `<div>
@@ -842,6 +862,8 @@ function water() {
 					id = 0;
 
 				} else if (flowRateEnter != flowRate) {
+					heatEx++;
+					
 					Swal.fire({
 						icon: 'error',
 						title: 'Incorrect value',
@@ -859,7 +881,7 @@ function water() {
 
 
 			} else if (id == 4) {
-
+                  heatEx++;
 				Swal.fire({
 					title: 'Formula',
 					html: `<div>
@@ -907,6 +929,8 @@ function water() {
 			}
 			id++;
 		}
+		
+		
 	});
 
 }
