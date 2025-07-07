@@ -1,13 +1,15 @@
 //var qxVal = 19393.54;
 //var hfgVal = 2165000;
-
+var timerMasterJson = {};
+var resultJson = {};
+var finA = 0;
 function finalAComplete() {
-
-//	msteemVal = 30;
-
-//	hgTemp = getRandomNumber(130, 136);
-//	wfRate = getRandomNumber(200, 800);
-//	tfFeed = getRandomNumber(20, 28);
+seconds = 0;
+	//	msteemVal = 30;
+  
+	//	hgTemp = getRandomNumber(130, 136);
+	//	wfRate = getRandomNumber(200, 800);
+	//	tfFeed = getRandomNumber(20, 28);
 
 	var label = "Steam generating capacity of the boiler is 30 kg/hr at " + hgTemp + "<sup>o</sup>C and 3.5 bar pressure. "
 
@@ -17,7 +19,7 @@ function finalAComplete() {
 		+ " Electric power given to boiler = 18 kW)"
 
 	$("#statement").html(label);
-//	heatVal = 2593.75;
+	//	heatVal = 2593.75;
 
 	var tout = 60;
 
@@ -104,7 +106,7 @@ function finalAComplete() {
      
      <div class="row justify-content-center mt-5" style="display:flex;" id="flowDiv" hidden>
      <div class="col-6 ">
-     <label style="font-family: emoji;font-size: 20px;word-spacing: 1px;">Select the aprropriate to get T<sub>out</sub> to 60 <sup>o</sup>C :  </label>
+     <label style="font-family: emoji;font-size: 20px;word-spacing: 1px;">Select the appropriate to get T<sub>out</sub> to 60 <sup>o</sup>C :  </label>
      </div>
      <div class="col-4" style="display:flex;">
      <select name="" id="toutSel" style="width:100%; size="5";overflow-y: auto;">
@@ -115,9 +117,15 @@ function finalAComplete() {
 						</select>
 	</div>
 	<div class="col-2">				
-     <button type="submit" class="btn btn-secondary"  id="submit25"  style="height:30px;width:80px;margin-top: 0px;" >Submit</button>                              
+     <button type="submit" class="btn btn-secondary"  id="submit25"  style="height:30px;width:80px;margin-top: 0px;" >Submit</button>                          
      </div>
      </div>
+     
+     <div class="row justify-content-center"  id="nextl1" style="margin-top:20px;" hidden>
+	<div class="col-md-8 instruction-box1 text-center">
+	<button type="submit5" class="btn btn-primary" id="result" style="height:32px;width:80px;margin-top: 0px; margin-left:10px;">Result</button>
+	</div>
+	</div>
       
 	</div>
 	</div>	
@@ -130,12 +138,23 @@ function finalAComplete() {
 	var qactual;
 	var toutCal;
 	var toutFin;
-
+	$("#result").click(function() {
+		resultJson.finAComp = finA;
+		console.log(resultJson);
+		
+		timerMasterJson.finalAPartTime = $("#counter").text();
+		console.log(timerMasterJson);
+		updateCounter();
+		
+		result();
+	})
 	$("#submit25").click(function() {
 
 		toutFin = $("#toutSel").val();
 
 		if (toutFin != 0) {
+			
+			$("#nextl1").prop("hidden", false);
 
 			if (toutCal < 60 && toutFin == 1) {
 				$("#submit25").prop("disabled", true);
@@ -148,6 +167,7 @@ function finalAComplete() {
 				$("#toutSel").prop("disabled", true);
 			} else {
 				if (id <= 3) {
+					finA++;
 					Swal.fire({
 						icon: 'error',
 						title: 'Incorrect value',
@@ -207,9 +227,9 @@ function finalAComplete() {
 			}
 
 			id++;
-
+         scrollToBottom();
 		} else {
-
+			finA++;
 			Swal.fire({
 				icon: 'error',
 				title: 'Select the Appropriate',
@@ -263,6 +283,7 @@ function finalAComplete() {
 					scrollToBottom();
 					id = 0;
 				} else if (toutCalEnter != toutCal) {
+					finA++;
 					Swal.fire({
 						icon: 'error',
 						title: 'Incorrect value',
@@ -280,7 +301,7 @@ function finalAComplete() {
 
 
 			} else if (id == 4) {
-
+                finA++;
 				Swal.fire({
 					title: 'Formula',
 					html: `<div>
@@ -363,6 +384,7 @@ function finalAComplete() {
 					scrollToBottom();
 					id = 0;
 				} else if (qactualEnter != qactual) {
+					finA++;
 					Swal.fire({
 						icon: 'error',
 						title: 'Incorrect value',
@@ -380,7 +402,7 @@ function finalAComplete() {
 
 
 			} else if (id == 4) {
-
+               finA++;
 				Swal.fire({
 					title: 'Formula',
 					html: `<div>
@@ -467,6 +489,7 @@ function finalAComplete() {
 					scrollToBottom();
 					id = 0;
 				} else if (qsteamEnter != qsteam) {
+					finA++;
 					Swal.fire({
 						icon: 'error',
 						title: 'Incorrect value',
@@ -484,7 +507,7 @@ function finalAComplete() {
 
 
 			} else if (id == 4) {
-
+                 finA++;
 				Swal.fire({
 					title: 'Formula',
 					html: `<div>
