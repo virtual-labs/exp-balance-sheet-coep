@@ -33,13 +33,15 @@
 		<span id="colgName">COEP TECHNOLOGICAL UNIVERSITY PUNE</span>			
 </header>
 
-<div  class="col-sm-1" > 
+<div  class="col-sm-12" > 
+	<button type="button" class="btn btn-danger btn1 button1"  id="report" hidden>Download report</button> 
 </div>
 
 
 <!-- style="background: #ededdd;" -->
-<div  class="col-sm-12 " style="background-color:#adcdc866;" > 
-
+<div  class="col-sm-12 " id="upperdiv" style="background-color:#adcdc866;" > 
+ <h5 id="counter" class=" btn1 timerStyle" hidden>00:00:00</h5>
+ 
  <div class="row justify-content-center" style="margin-bottom:0px; ">
             <div class="col-md-10 instruction-box">
             <h3 class="text-center headingExp" >INTERPRET THE ENERGY BALANCE SHEET AND MATERIAL BALANCE SHEET FOR BOILER & HEAT EXCHANGER PLANT</h3>
@@ -60,7 +62,7 @@
 
 </div>
  
- <div  class="col-sm-12" id ="ecalculations"  style="background-color:#adcdc866; height:1000px;"> 
+ <div  class="col-sm-12" id ="ecalculations"  style="background-color:#adcdc866; height:1500px;"> 
  </div>
  <div  class="col-sm-1" > 
 </div> 
@@ -90,7 +92,6 @@ Copyrights &copy; COEP - Virtual Lab
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   
   <script type="text/javascript" src="src/bootstrap.min.js"></script>
@@ -103,6 +104,8 @@ Copyrights &copy; COEP - Virtual Lab
 <script type="text/javascript" src="src/heatExWater.js"></script>
 <script type="text/javascript" src="src/steamCalculation.js"></script>
 <script type="text/javascript" src="src/finalFirstPartComplete.js"></script>
+<script type="text/javascript" src="src/result.js"></script>
+<script type="text/javascript" src="src/timer.js"></script>
 
 <script>
 energyMass();
@@ -119,6 +122,30 @@ function scrollToBottom() {
 		});
 	}
 }
+
+$('#report').on('click', function() {
+	
+	tmp = $("#nameInput").val();
+	if(tmp==""){
+		alert("Enter name");
+	}
+	else{
+		$("#nameInput").prop("disabled",true);
+		$("#nameInput").css("background-color","#fff");
+			$('#report').prop("hidden",true);
+		    html2canvas(document.querySelector("#ecalculations")).then(canvas => {
+		        // Append the screenshot canvas to the body
+		        document.body.appendChild(canvas);
+		        $("canvas").css("display","none");
+		        // Optionally save the screenshot as an image
+		        var link = document.createElement('a');
+		        link.download = 'Energy_Balance_sheet_report.png';
+		        link.href = canvas.toDataURL();
+		        link.click();
+		    });
+		
+}
+});
 
 </script>
 
