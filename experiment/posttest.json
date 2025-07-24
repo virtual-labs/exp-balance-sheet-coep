@@ -13,17 +13,6 @@
       "difficulty": "beginner"
     },
     {
-      "question": "Which of the following is NOT a type of material balance?",
-      "answers": {
-        "a": "Overall material balance",
-        "b": "Component material balance",
-        "c": "Energy balance",
-        "d": "Atomic material balance"
-      },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
-    },
-    {
       "question": "A process involves the reaction of 100 kg of A with 200 kg of B to form 250 kg of C and 50 kg of D. What is the degree of freedom for this system?",
       "answers": {
         "a": "1",
