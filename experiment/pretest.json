@@ -2,7 +2,7 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "What is the primary purpose of a mass balance in a process project?",
+      "question": "What is the primary purpose of a material balance in a process project?",
       "answers": {
         "a": "To calculate the energy requirements of a process",
         "b": "To determine the material flows and inventories in a process",
@@ -13,20 +13,9 @@
       "difficulty": "beginner"
     },
     {
-      "question": "Which of the following is a type of energy balance?",
+      "question": "What is the law of conservation of material?",
       "answers": {
-        "a": "Material balance",
-        "b": "Energy balance",
-        "c": "Momentum balance",
-        "d": "Mass balance"
-      },
-      "correctAnswer": "b",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "What is the law of conservation of mass?",
-      "answers": {
-        "a": "Mass cannot be created or destroyed, only converted from one form to another",
+        "a": "material cannot be created or destroyed, only converted from one form to another",
         "b": "Energy cannot be created or destroyed, only converted from one form to another",
         "c": "Momentum cannot be created or destroyed, only converted from one form to another",
         "d": "None of the above"
@@ -46,10 +35,10 @@
       "difficulty": "beginner"
     },
     {
-      "question": "Which of the following is a component of a mass balance?",
+      "question": "Which of the following is a component of a material balance?",
       "answers": {
-        "a": "Material inputs and outputs",
-        "b": "Energy inputs and outputs",
+        "a": "Raw material in and finished product out with waste",
+        "b": "Energy consumed for material processing",
         "c": "Momentum inputs and outputs",
         "d": "All of the above"
       },
@@ -57,12 +46,12 @@
       "difficulty": "beginner"
     },
     {
-      "question": "What is the difference between a mass balance and an energy balance?",
+      "question": "What is the difference between a material balance and an energy balance?",
       "answers": {
-        "a": "A mass balance accounts for material flows, while an energy balance accounts for energy flows",
-        "b": "A mass balance accounts for energy flows, while an energy balance accounts for material flows",
-        "c": "A mass balance is used for process design, while an energy balance is used for process operation",
-        "d": "A mass balance is used for process operation, while an energy balance is used for process design"
+        "a": "A material balance accounts for material flows, while an energy balance accounts for energy flows",
+        "b": "A material balance accounts for energy flows, while an energy balance accounts for material flows",
+        "c": "A material balance is used for process design, while an energy balance is used for process operation",
+        "d": "A material balance is used for process operation, while an energy balance is used for process design"
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
@@ -90,7 +79,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "What is the concept of 'basis' in a mass balance?",
+      "question": "What is the concept of 'basis' in a material balance?",
       "answers": {
         "a": "The quantity of material used as a reference point for calculations",
         "b": "The type of material being processed",
@@ -101,7 +90,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "Which of the following is a benefit of performing a mass balance and energy balance in a process project?",
+      "question": "Which of the following is a benefit of performing a material balance and energy balance in a process project?",
       "answers": {
         "a": "Improved process design and operation",
         "b": "Increased project capital and operating costs",
