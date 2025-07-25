@@ -4,9 +4,9 @@ var timerMasterJson = {};
 var resultJson = {};
 var finA = 0;
 function finalAComplete() {
-seconds = 0;
+	seconds = 0;
 	//	msteemVal = 30;
-  
+
 	//	hgTemp = getRandomNumber(130, 136);
 	//	wfRate = getRandomNumber(200, 800);
 	//	tfFeed = getRandomNumber(20, 28);
@@ -115,17 +115,16 @@ seconds = 0;
 						<option value="2">Decrease steam flow rate</option>
 						<option value="3">Maintain steam flow rate</option>
 						</select>
+						
 	</div>
 	<div class="col-2">				
      <button type="submit" class="btn btn-secondary"  id="submit25"  style="height:30px;width:80px;margin-top: 0px;" >Submit</button>                          
      </div>
      </div>
      
-     <div class="row justify-content-center"  id="nextl1" style="margin-top:20px;" hidden>
-	<div class="col-md-8 instruction-box1 text-center">
-	<button type="submit5" class="btn btn-primary" id="result" style="height:32px;width:80px;margin-top: 0px; margin-left:10px;">Result</button>
-	</div>
-	</div>
+    <div class="text-center mt-3 mb-5" >
+    <button type="submit5" class="btn btn-primary"  id="nextl4"  style="height:100%;width:80px;margin-top: 0px;" hidden>Next</button>                                
+    </div>
       
 	</div>
 	</div>	
@@ -138,15 +137,19 @@ seconds = 0;
 	var qactual;
 	var toutCal;
 	var toutFin;
-	$("#result").click(function() {
+
+	$("#nextl4").click(function() {
+
 		resultJson.finAComp = finA;
 		console.log(resultJson);
-		
+
 		timerMasterJson.finalAPartTime = $("#counter").text();
 		console.log(timerMasterJson);
 		updateCounter();
-		
-		result();
+
+	const functions1 = [ques1, ques2, ques3,ques4,ques5];	
+		const randomIndex = Math.floor(Math.random() * functions1.length);
+        functions1[randomIndex]();
 	})
 	$("#submit25").click(function() {
 
@@ -154,17 +157,19 @@ seconds = 0;
 
 		if (toutFin != 0) {
 			
-			$("#nextl1").prop("hidden", false);
-
+			
 			if (toutCal < 60 && toutFin == 1) {
 				$("#submit25").prop("disabled", true);
 				$("#toutSel").prop("disabled", true);
+				$("#nextl4").prop("hidden", false);
 			} else if (toutCal > 60 && toutFin == 2) {
 				$("#submit25").prop("disabled", true);
 				$("#toutSel").prop("disabled", true);
+				$("#nextl4").prop("hidden", false);
 			} else if (toutCal == 60 && toutFin == 3) {
 				$("#submit25").prop("disabled", true);
 				$("#toutSel").prop("disabled", true);
+				$("#nextl4").prop("hidden", false);
 			} else {
 				if (id <= 3) {
 					finA++;
@@ -227,7 +232,7 @@ seconds = 0;
 			}
 
 			id++;
-         scrollToBottom();
+			scrollToBottom();
 		} else {
 			finA++;
 			Swal.fire({
@@ -301,7 +306,7 @@ seconds = 0;
 
 
 			} else if (id == 4) {
-                finA++;
+				finA++;
 				Swal.fire({
 					title: 'Formula',
 					html: `<div>
@@ -402,7 +407,7 @@ seconds = 0;
 
 
 			} else if (id == 4) {
-               finA++;
+				finA++;
 				Swal.fire({
 					title: 'Formula',
 					html: `<div>
@@ -507,7 +512,7 @@ seconds = 0;
 
 
 			} else if (id == 4) {
-                 finA++;
+				finA++;
 				Swal.fire({
 					title: 'Formula',
 					html: `<div>

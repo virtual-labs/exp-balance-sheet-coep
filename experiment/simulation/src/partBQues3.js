@@ -1,50 +1,49 @@
-var qxVal;
-var hfgVal;
 var timerMasterJson = {};
 var resultJson = {};
-var steam1 = 0;
-function steam() {
-seconds = 0;
-//	hgTemp = getRandomNumber(130, 136);
-//	wfRate = getRandomNumber(200, 800);
-//	tfFeed = getRandomNumber(20, 28);
+var finB3 = 0;
 
-	var label = "Steam generating capacity of the boiler is 30 kg/hr at " + hgTemp + "<sup>o</sup>C and 3.5 bar pressure. "
+function ques3(){
+	console.log("que 3");
+	seconds = 0;
+    var htRate = getRandomNumber(18000, 25000);
+	var bEfficiency = getRandomNumber(70, 90);
+	var capInc = getRandomNumber1(1.2, 2);
+	var to1 = getRandomNumber(50, 60);
+	var mw = getRandomNumber(200, 400);
+	var tf1 = getRandomNumber(20, 30);
+	
+	var label = `If the heat exchanger capacity must be made `+capInc+` times the original, propose the necessary changes on the 
+	                boiler side to support the new heat demand.`
 
-		+ "Outlet water flow rate from heat exchanger is " + wfRate + " lit/hr. "
-		+ "Temperature of feed water T<sub>feed</sub> is " + tfFeed + "<sup>o</sup>C"
-		+ ". (C<sub>p</sub> = 4184 J/kg<sup>o</sup>C, "
-		+ " Electric power given to boiler = 18 kW)"
+
 
 	$("#statement").html(label);
-//	heatVal = 2593.75;
-
-	var tout = 60;
-
+	
 	var htm = `
 	<div class="row justify-content-center" style="margin-top:-20px;display:flex;">
-	<div class="col-md-8 instruction-box1 " style="display:flex;">
+	<div class="col-md-8 instruction-box1 " style="display:flex; margin-bottom: 30px;">
 	<div class="col-5 instruction-box1" style="overflow-y: auto; height: 500px;">
 	 <center><span class="fw-bold headingExp" style="font-family: emoji;
     font-size: 20px;
     word-spacing: 1px; ">GIVEN   </span></center>
      <span class="fw-bold" style="font-family: emoji;
     font-size: 20px;
-    word-spacing: 1px;" id = "exchangerStatement"> Assuming T<sub>condensate</sub> = 60 <sup>o</sup>C,<br> 
-                   Assume T<sub>surface</sub> = 129 <sup>o</sup>C,<br>
-                   Expected T<sub>out</sub> for `+ wfRate + ` lit/hr = ` + tout + ` <sup>o</sup>C,<br>
-                   Length of heat exchanger l = 3.8 m,
-                   <br>Density of condensate at 60<sup>o</sup>C rho<sub>condensate</sub> = 983 kg/m<sup>3</sup>, 
-                 <br> Density of steam rho<sub>steam</sub> = 1.9 kg/m<sup>3</sup>,<br>
-                
-                  Dynamic viscosity of condensate &mu;<sub>u</sub> = 0.4658 &times; 10<sup>-3</sup> Pa.s, <br>
-                  Thermal conductivity of condensate k<sub>condensate</sub> = 0.73 W/mK ,<br>
-                  Acceleration due to gravity (g) = 9.81 m/s<sup>2</sup>,<br>
-                  Density of water = 1000 kg/m<sup>2</sup>,<br>
-                  Diameter of outer pipe = 0.03 m,<br>
-                  Thermal conductivity of steel pipe (SS304) = 16.2 W/mK,<br>
-                  Inner radius of inner pipe (r<sub>1</sub>) = 0.0079 m,<br>
-                  Outer radius of inner pipe (r<sub>2</sub>) = 0.01067 m</span>
+    word-spacing: 1px;" id = "exchangerStatement"> 
+               
+          	Existing boiler capacity : 30 kg/hr at 136 <sup>o</sup>C and 3.5 bar,<br>
+			Current heat transfer rate : `+htRate+` J,<br>
+			Boiler efficiency : `+bEfficiency+`%,<br>
+			Electric Power rating of Boiler Q<sub>electric</sub>= 18kW,<br>
+            Current outlet temperature T<sub>out1</sub> = `+to1+` <sup>o</sup>C,<br>
+			Current flow rate of water m<sub>water</sub> = `+mw+` l/hr,<br>
+			Specific heat capacity of water C<sub>p</sub> = 4184  J/kg<sup>o</sup>C,<br>
+			Feed water temperature T<sub>feed</sub> = `+tf1+` <sup>o</sup>C,<br>
+			Enthalpy of vaporization h<sub>fg</sub> = 2156.2 kJ/kg,<br> 
+			Enthalpy of steam h<sub>g</sub> = 2728.2 kJ/kg,<br>
+			T<sub>condensate</sub> = 60 <sup>o</sup>C
+
+            
+                 </span>
 	</div>
 	
 	<div class="col-7 instruction-box1" style="overflow-y: auto; height: 500px;" id="instructionBox">
@@ -52,118 +51,136 @@ seconds = 0;
     font-size: 20px;
     word-spacing: 1px; ">CALCULATIONS   </span></center>
     
-   <div class="row justify-content-center mt-5" style="display:flex;" >
-        <label style="font-family: emoji;font-size: 20px;word-spacing: 1px;">h<sub>i</sub> calculated for water is `+ heatVal + ` W/m<sup>2</sup>.<sup>o</sup>C </label>
-   </div>
+  
      
     <div class="row justify-content-center mt-5" style="display:flex;" >
     <div class="col-6 ">
-    <label style="font-family: emoji;font-size: 20px;word-spacing: 1px;">Find h<sub>fg</sub> (J) at steam from steam table: </label>
+    <label style="font-family: emoji;font-size: 20px;word-spacing: 1px;">Find enthalpy of water h<sub>f</sub>  :  </label>
     </div>
     <div class="col-3" style="display:flex;">
-    <input type="number" id="hfg" style="width:100%; " class="form-control" /> 
+    <input type="number" id="hfFind1" style="width:100%;" class="form-control" /> 
     </div>
     <div class="col-3">
-    <button type="submit" class="btn btn-info"  id="refer3"  style="height:30px;width:56px;margin-top: 0px;">Refer</button>
-    <button type="submit" class="btn btn-secondary"  id="submit14"  style="height:30px;width:65px;margin-top: 0px;" >Submit</button>                              
+    <button type="submit" class="btn btn-info"  id="refer6"  style="height:32px;margin-top: 0px; margin-left:10px;" >Refer</button>
+
+    <button type="submit" class="btn btn-secondary"  id="submit38"  style="height:30px;width:80px;margin-top: 0px;" >Submit</button>                              
     </div>
     </div>
     
-    <div class="row justify-content-center mt-5" style="display:flex;" id = "heatTrasDiv" hidden>
+     
+    <div class="row justify-content-center mt-5" style="display:flex;" id = "toDiv" hidden>
     <div class="col-6 ">
-    <label style="font-family: emoji;font-size: 20px;word-spacing: 1px;">Calculate heat transfer coefficient of  <br>steam for pure condensation h<sub>o</sub> (W/m<sup>2</sup>.<sup>o</sup>C) : </label>
+    <label style="font-family: emoji;font-size: 20px;word-spacing: 1px;">Calculate new temp T<sub>out2</sub> :  </label>
     </div>
     <div class="col-4" style="display:flex;">
-    <input type="number" id="heatTrans" style="width:100%;" class="form-control" />
+    <input type="number" id="ton1" style="width:100%;" class="form-control" /> 
     </div>
     <div class="col-2">
-    <button type="submit" class="btn btn-secondary"  id="submit15"  style="height:30px;width:80px;margin-top: 0px;" >Submit</button>                              
-    </div>
-    </div>
     
-    <div class="row justify-content-center mt-5" style="display:flex;" id = "overallDiv" hidden>
-    <div class="col-6 ">
-    <label style="font-family: emoji;font-size: 20px;word-spacing: 1px;">Calculate Overall heat transfer coefficient U<sub>o</sub> (W/m<sup>2</sup>.<sup>o</sup>C): </label>
-    </div>  
-    <div class="col-4" style="display:flex;">
-    <input type="number" id="overAll" style="width:100%;" class="form-control" />
-    </div>  
-    <div class="col-2">
-    <button type="submit" class="btn btn-secondary"  id="submit16"  style="height:30px;width:80px;margin-top: 0px;" >Submit</button>                              
-    </div>   
-    </div>  
-    
-    <div class="row justify-content-center mt-5" style="display:flex;" id = "logDiv" hidden >
-    <div class="col-6 ">
-    <label style="font-family: emoji;font-size: 20px;word-spacing: 1px;">Calculate Log mean temperature difference &Delta;T<sub>LM</sub> (<sup>o</sup>C) : </label>
+    <button type="submit" class="btn btn-secondary"  id="submit39"  style="height:30px;width:80px;margin-top: 0px;" >Submit</button>                              
     </div>
-    <div class="col-4" style="display:flex;">
-    <input type="number" id="loagMean" style="width:100%;" class="form-control" />
-    </div>
-    <div class="col-2">
-    <button type="submit" class="btn btn-secondary"  id="submit18"  style="height:30px;width:80px;margin-top: 0px;" >Submit</button>                              
-    </div>  
     </div> 
     
-    <div class="row justify-content-center mt-5" style="display:flex;" id = "saDiv" hidden>
-         <div class="col-6 ">
-    <label style="font-family: emoji;font-size: 20px;word-spacing: 1px;">Calculate Surface Area of inner tube SA (m<sup>3</sup>) : </label>
-    </div>  
+     <div class="row justify-content-center mt-5" style="display:flex;" id = "mw2Div" hidden>
+    <div class="col-6 ">
+    <label style="font-family: emoji;font-size: 20px;word-spacing: 1px;">Calculate flow rate of water m<sub>water2</sub> :  </label>
+    </div>
     <div class="col-4" style="display:flex;">
-    <input type="number" id="sa" style="width:100%;" class="form-control" />
-    </div>  
+    <input type="number" id="mw2" style="width:100%;" class="form-control" /> 
+    </div>
     <div class="col-2">
-    <button type="submit" class="btn btn-secondary"  id="submit19"  style="height:30px;width:80px;margin-top: 0px;" >Submit</button>                              
-    </div> 
-    </div>  
     
-    <div class="row justify-content-center mt-5" style="display:flex;" id = "qhxDiv" hidden>
-         <div class="col-6 ">
-    <label style="font-family: emoji;font-size: 20px;word-spacing: 1px;">Calculate maximum heat exchanges heat transfer Q<sub>hx</sub> : </label>
-    </div>  
+    <button type="submit" class="btn btn-secondary"  id="submit41"  style="height:30px;width:80px;margin-top: 0px;" >Submit</button>                              
+    </div>
+    </div> 
+    
+     <div class="row justify-content-center mt-5" style="display:flex;" id = "htrDiv" hidden>
+    <div class="col-6 ">
+    <label style="font-family: emoji;font-size: 20px;word-spacing: 1px;">Calculate new heat transfer rate required Q<sub>req</sub> :  </label>
+    </div>
     <div class="col-4" style="display:flex;">
-    <input type="number" id="qhx" style="width:100%;" class="form-control" />
+    <input type="number" id="htr" style="width:100%;" class="form-control" /> 
     </div>
     <div class="col-2">
-    <button type="submit" class="btn btn-secondary"  id="submit20"  style="height:30px;width:80px;margin-top: 0px;" >Submit</button>                              
-    </div> 
+    
+    <button type="submit" class="btn btn-secondary"  id="submit42"  style="height:30px;width:80px;margin-top: 0px;" >Submit</button>                              
     </div>
+    </div> 
+    
       
-    <div class="text-center mt-3 mb-5" >
-    <button type="submit5" class="btn btn-primary"  id="nextl3"  style="height:100%;width:80px;margin-top: 0px;" hidden>Next</button>                                
+      <div class="row justify-content-center mt-5" style="display:flex;" id = "frDiv" hidden>
+    <div class="col-6 ">
+    <label style="font-family: emoji;font-size: 20px;word-spacing: 1px;">Calculate new mass flow rate of steam required m<sub>steam</sub> (kg):  </label>
     </div>
+    <div class="col-4" style="display:flex;">
+    <input type="number" id="fr" style="width:100%;" class="form-control" /> 
+    </div>
+    <div class="col-2">
+    
+    <button type="submit" class="btn btn-secondary"  id="submit43"  style="height:30px;width:80px;margin-top: 0px;" >Submit</button>                              
+    </div>
+    </div>  
+    
+    
+     <div class="row justify-content-center mt-5" style="display:flex;" id = "qeDiv" hidden>
+    <div class="col-6 ">
+    <label style="font-family: emoji;font-size: 20px;word-spacing: 1px;">Calculate the new boiler power rating Q<sub>electric</sub> (kW):  </label>
+    </div>
+    <div class="col-4" style="display:flex;">
+    <input type="number" id="qe" style="width:100%;" class="form-control" /> 
+    </div>
+    <div class="col-2">
+    
+    <button type="submit" class="btn btn-secondary"  id="submit45"  style="height:30px;width:80px;margin-top: 0px;" >Submit</button>                              
+    </div>
+    </div>  
       
+    <div class="row justify-content-center"  id="nextque" style="margin-top:20px;" hidden>
+	<div class="col-md-8 instruction-box1 text-center">
+	<button type="submit5" class="btn btn-primary" id="result" style="height:32px;width:80px;margin-top: 0px; margin-left:10px;">Result</button>
+	</div>
+	</div>
+      
+     
 	</div>
 	</div>	
 	</div>`
 
 	$("#ecalculations").html(htm);
+	 
+		var hfValGet1; 
+      	var toutN; 
+        var mWater2;
+        var htrVal;
+        var mVal;
+        var qElecVal;
+//        Q_elec = (m_steam * (hg - hf))/(3600*1000* efficiency)
 
-	var hoVal;
-	var uoVal;
-
-	var logMean;
-	var smVal;
 	
-
-	$("#nextl3").click(function() {
-		finalAComplete();
-		resultJson.steamEx = steam1;
-        console.log(resultJson);
-        
-        timerMasterJson.steamTime = $("#counter").text();
+	
+	$("#result").click(function() {
+		resultJson.finB3Comp = finB3;
+		console.log(resultJson);
+		
+		timerMasterJson.finalB3PartTime = $("#counter").text();
 		console.log(timerMasterJson);
 		updateCounter();
+		result3();
 	})
-
-	$("#submit20").click(function() {
-		qxVal = (uoVal * logMean * smVal).toFixed(2);
-		qxVal = parseFloat(qxVal);
-
-		var qxValEnter = $("#qhx").val();
-
-		if (qxValEnter == "" || qxValEnter <= 0) {
-
+       
+       $("#submit45").click(function(){
+	
+	     var sub = parseFloat(2728.2)-parseFloat(hfValGet1);
+	     
+	     var num = mVal*sub;
+	     var deno = 3600*(bEfficiency/100);
+	     qElecVal = (num/deno).toFixed(2);
+	     qElecVal = parseFloat(qElecVal);
+	     
+	     var qElecValEnter = $("#qe").val();
+	     
+	     if (qElecValEnter == "" || qElecValEnter <= 0) {
+            
 			Swal.fire({
 				icon: 'error',
 				title: 'Enter the value',
@@ -178,18 +195,20 @@ seconds = 0;
 			});
 
 		} else {
-			qxValEnter = parseFloat($("#qhx").val());
+			
+			qElecValEnter = parseFloat($("#qe").val());
+			
 			if (id <= 3) {
 
-				if (qxValEnter == qxVal) {
+				if (qElecValEnter == qElecVal) {
 
-					$("#submit20").prop("disabled", true);
-					$("#qhx").prop("disabled", true);
-					 $("#nextl3").prop("hidden",false);	         
+					$("#submit45").prop("disabled", true);
+					$("#qe").prop("disabled", true);
+//					$("#qeDiv").prop("hidden", false);
 					scrollToBottom();
 					id = 0;
-				} else if (qxValEnter != qxVal) {
-					steam1++;
+				} else if (qElecValEnter != qElecVal) {
+					finB3++;
 					Swal.fire({
 						icon: 'error',
 						title: 'Incorrect value',
@@ -207,11 +226,12 @@ seconds = 0;
 
 
 			} else if (id == 4) {
-               steam1++;
+                finB3++;
+			
 				Swal.fire({
 					title: 'Formula',
 					html: `<div>
-                    <img src='images/qhxFormula.png' class='img-fluid' 
+                    <img src='images/q1.png' class='img-fluid' 
                          style='border-style: double; border-color: black; display: block; margin: 10px auto; width: 100%; max-width: 1200px;'>
                </div>`,
 					width: '40%',
@@ -227,18 +247,18 @@ seconds = 0;
 
 			} else {
 
-				if (qxValEnter == qxVal) {
+				if (qElecValEnter == qElecVal) {
 
-					$("#submit20").prop("disabled", true);
-					$("#qhx").prop("disabled", true);
-						          $("#nextl3").prop("hidden",false);
+					$("#submit45").prop("disabled", true);
+					$("#qe").prop("disabled", true);
+//					$("#qeDiv").prop("hidden", false);
 					scrollToBottom();
 					id = 0;
 				} else {
 
 					Swal.fire({
 						icon: 'success',
-						title: 'Correct answer is : ' + qxVal,
+						title: 'Correct answer is : ' + qElecVal,
 						confirmButtonText: 'Try Again',
 						customClass: {
 							icon: 'custom-icon',
@@ -248,25 +268,27 @@ seconds = 0;
 							cancelButton: 'custom-cancel-button',
 						}
 					});
-					
-                  
+
+                   $("#nextque").prop("hidden", false);
 
 				}
 
 			}
 			id++;
 		}
-
-
-	});
-
-	$("#submit19").click(function() {
-		smVal = (3.14 * 2 * 0.0079 * 3.8).toFixed(2);
-		smVal = parseFloat(smVal);
-
-		var smValEnter = $("#sa").val();
-
-		if (smValEnter == "" || smValEnter <= 0) {
+	     
+     })
+       
+        $("#submit43").click(function(){
+	
+	     var sub = 136-60;
+	     var deno = (2156.2*1000)+4184*sub;
+	     mVal = (htrVal/deno).toFixed(2);
+	     mVal = parseFloat(mVal);
+	     
+	     var mValEnter = $("#fr").val();
+	     
+	     if (mValEnter == "" || mValEnter <= 0) {
 
 			Swal.fire({
 				icon: 'error',
@@ -282,18 +304,20 @@ seconds = 0;
 			});
 
 		} else {
-			smValEnter = parseFloat($("#sa").val());
+			
+			mValEnter = parseFloat($("#fr").val());
+			
 			if (id <= 3) {
 
-				if (smValEnter == smVal) {
+				if (mValEnter == mVal) {
 
-					$("#submit19").prop("disabled", true);
-					$("#sa").prop("disabled", true);
-					$("#qhxDiv").prop("hidden", false);
+					$("#submit43").prop("disabled", true);
+					$("#fr").prop("disabled", true);
+					$("#qeDiv").prop("hidden", false);
 					scrollToBottom();
 					id = 0;
-				} else if (smValEnter != smVal) {
-					steam1++;
+				} else if (mValEnter != mVal) {
+					finB3++;
 					Swal.fire({
 						icon: 'error',
 						title: 'Incorrect value',
@@ -311,11 +335,12 @@ seconds = 0;
 
 
 			} else if (id == 4) {
-steam1++;
+                finB3++;
+			
 				Swal.fire({
 					title: 'Formula',
 					html: `<div>
-                    <img src='images/saFormula.png' class='img-fluid' 
+                    <img src='images/m1.png' class='img-fluid' 
                          style='border-style: double; border-color: black; display: block; margin: 10px auto; width: 100%; max-width: 1200px;'>
                </div>`,
 					width: '40%',
@@ -331,18 +356,18 @@ steam1++;
 
 			} else {
 
-				if (smValEnter == smVal) {
+				if (mValEnter == mVal) {
 
-					$("#submit19").prop("disabled", true);
-					$("#sa").prop("disabled", true);
-					$("#qhxDiv").prop("hidden", false);
+					$("#submit43").prop("disabled", true);
+					$("#fr").prop("disabled", true);
+					$("#qeDiv").prop("hidden", false);
 					scrollToBottom();
 					id = 0;
 				} else {
 
 					Swal.fire({
 						icon: 'success',
-						title: 'Correct answer is : ' + smVal,
+						title: 'Correct answer is : ' + mVal,
 						confirmButtonText: 'Try Again',
 						customClass: {
 							icon: 'custom-icon',
@@ -359,347 +384,330 @@ steam1++;
 			}
 			id++;
 		}
+	     
+	     
+     })
+        
+       $("#submit42").click(function(){
+	   var sub = toutN - tf1;
+	   htrVal = (mWater2*4184*sub).toFixed(2);
+	   htrVal = parseFloat(htrVal);
+	   
+	   var htrValEnter = $("#htr").val();
+	   
+	   if (htrValEnter == "" || htrValEnter <= 0) {
 
+			Swal.fire({
+				icon: 'error',
+				title: 'Enter the value',
+				confirmButtonText: 'Ok',
+				customClass: {
+					icon: 'custom-icon',
+					popup: 'custom-popup',
+					title: 'custom-title',
+					confirmButton: 'custom-confirm-button',
+					cancelButton: 'custom-cancel-button',
+				}
+			});
+
+		} else {
+			
+			htrValEnter = parseFloat($("#htr").val());
+			
+			if (id <= 3) {
+
+				if (htrValEnter == htrVal) {
+
+					$("#submit42").prop("disabled", true);
+					$("#htr").prop("disabled", true);
+					$("#frDiv").prop("hidden", false);
+					scrollToBottom();
+					id = 0;
+				} else if (htrValEnter != htrVal) {
+					finB3++;
+					Swal.fire({
+						icon: 'error',
+						title: 'Incorrect value',
+						confirmButtonText: 'Try Again',
+						customClass: {
+							icon: 'custom-icon',
+							popup: 'custom-popup',
+							title: 'custom-title',
+							confirmButton: 'custom-confirm-button',
+							cancelButton: 'custom-cancel-button',
+						}
+					});
+
+				}
+
+
+			} else if (id == 4) {
+                finB3++;
+			
+				Swal.fire({
+					title: 'Formula',
+					html: `<div>
+                    <img src='images/qReqFormula.png' class='img-fluid' 
+                         style='border-style: double; border-color: black; display: block; margin: 10px auto; width: 100%; max-width: 1200px;'>
+               </div>`,
+					width: '40%',
+					confirmButtonText: 'Try Again',
+					customClass: {
+						icon: 'custom-icon',
+						popup: 'custom-popup',
+						title: 'custom-title',
+						confirmButton: 'custom-confirm-button',
+						cancelButton: 'custom-cancel-button',
+					}
+				});
+
+			} else {
+
+				if (htrValEnter == htrVal) {
+
+					$("#submit42").prop("disabled", true);
+					$("#htr").prop("disabled", true);
+					$("#frDiv").prop("hidden", false);
+					scrollToBottom();
+					id = 0;
+				} else {
+
+					Swal.fire({
+						icon: 'success',
+						title: 'Correct answer is : ' + htrVal,
+						confirmButtonText: 'Try Again',
+						customClass: {
+							icon: 'custom-icon',
+							popup: 'custom-popup',
+							title: 'custom-title',
+							confirmButton: 'custom-confirm-button',
+							cancelButton: 'custom-cancel-button',
+						}
+					});
+
+
+				}
+
+			}
+			id++;
+		}
+	   
+   })  
+        
+       $("#submit41").click(function(){
+	    mWater2 = (capInc*mw).toFixed(2)
+	    mWater2 = parseFloat(mWater2);
+	    
+	    var mWater2Enter = $("#mw2").val();
+	    
+	    if (mWater2Enter == "" || mWater2Enter <= 0) {
+
+			Swal.fire({
+				icon: 'error',
+				title: 'Enter the value',
+				confirmButtonText: 'Ok',
+				customClass: {
+					icon: 'custom-icon',
+					popup: 'custom-popup',
+					title: 'custom-title',
+					confirmButton: 'custom-confirm-button',
+					cancelButton: 'custom-cancel-button',
+				}
+			});
+
+		} else {
+			
+			mWater2Enter = parseFloat($("#mw2").val());
+			
+			if (id <= 3) {
+
+				if (mWater2Enter == mWater2) {
+
+					$("#submit41").prop("disabled", true);
+					$("#mw2").prop("disabled", true);
+					$("#htrDiv").prop("hidden", false);
+					scrollToBottom();
+					id = 0;
+				} else if (mWater2Enter != mWater2) {
+					finB3++;
+					Swal.fire({
+						icon: 'error',
+						title: 'Incorrect value',
+						confirmButtonText: 'Try Again',
+						customClass: {
+							icon: 'custom-icon',
+							popup: 'custom-popup',
+							title: 'custom-title',
+							confirmButton: 'custom-confirm-button',
+							cancelButton: 'custom-cancel-button',
+						}
+					});
+
+				}
+
+
+			} else if (id == 4) {
+                finB3++;
+			
+				Swal.fire({
+					title: 'Formula',
+					html: `<div>
+                    <img src='images/mWater2.png' class='img-fluid' 
+                         style='border-style: double; border-color: black; display: block; margin: 10px auto; width: 100%; max-width: 1200px;'>
+               </div>`,
+					width: '40%',
+					confirmButtonText: 'Try Again',
+					customClass: {
+						icon: 'custom-icon',
+						popup: 'custom-popup',
+						title: 'custom-title',
+						confirmButton: 'custom-confirm-button',
+						cancelButton: 'custom-cancel-button',
+					}
+				});
+
+			} else {
+
+				if (mWater2Enter == mWater2) {
+
+					$("#submit41").prop("disabled", true);
+					$("#mw2").prop("disabled", true);
+					$("#htrDiv").prop("hidden", false);
+					scrollToBottom();
+					id = 0;
+				} else {
+
+					Swal.fire({
+						icon: 'success',
+						title: 'Correct answer is : ' + mWater2,
+						confirmButtonText: 'Try Again',
+						customClass: {
+							icon: 'custom-icon',
+							popup: 'custom-popup',
+							title: 'custom-title',
+							confirmButton: 'custom-confirm-button',
+							cancelButton: 'custom-cancel-button',
+						}
+					});
+
+
+				}
+
+			}
+			id++;
+		}
+	    
+}) 
+        
+	   $("#submit39").click(function(){
+		toutN = (capInc*to1).toFixed(2);
+		toutN = parseFloat(toutN); 
+		
+		var toutNEnter = $("#ton1").val();
+		
+		if (toutNEnter == "" || toutNEnter <= 0) {
+
+			Swal.fire({
+				icon: 'error',
+				title: 'Enter the value',
+				confirmButtonText: 'Ok',
+				customClass: {
+					icon: 'custom-icon',
+					popup: 'custom-popup',
+					title: 'custom-title',
+					confirmButton: 'custom-confirm-button',
+					cancelButton: 'custom-cancel-button',
+				}
+			});
+
+		} else {
+			
+			toutNEnter = parseFloat($("#ton1").val());
+			
+			if (id <= 3) {
+
+				if (toutNEnter == toutN) {
+
+					$("#submit39").prop("disabled", true);
+					$("#ton1").prop("disabled", true);
+					$("#mw2Div").prop("hidden", false);
+					scrollToBottom();
+					id = 0;
+				} else if (toutNEnter != toutN) {
+					finB3++;
+					Swal.fire({
+						icon: 'error',
+						title: 'Incorrect value',
+						confirmButtonText: 'Try Again',
+						customClass: {
+							icon: 'custom-icon',
+							popup: 'custom-popup',
+							title: 'custom-title',
+							confirmButton: 'custom-confirm-button',
+							cancelButton: 'custom-cancel-button',
+						}
+					});
+
+				}
+
+
+			} else if (id == 4) {
+                finB3++;
+			
+				Swal.fire({
+					title: 'Formula',
+					html: `<div>
+                    <img src='images/ton11.png' class='img-fluid' 
+                         style='border-style: double; border-color: black; display: block; margin: 10px auto; width: 100%; max-width: 1200px;'>
+               </div>`,
+					width: '40%',
+					confirmButtonText: 'Try Again',
+					customClass: {
+						icon: 'custom-icon',
+						popup: 'custom-popup',
+						title: 'custom-title',
+						confirmButton: 'custom-confirm-button',
+						cancelButton: 'custom-cancel-button',
+					}
+				});
+
+			} else {
+
+				if (toutNEnter == toutN) {
+
+					$("#submit39").prop("disabled", true);
+					$("#ton1").prop("disabled", true);
+					$("#mw2Div").prop("hidden", false);
+					scrollToBottom();
+					id = 0;
+				} else {
+
+					Swal.fire({
+						icon: 'success',
+						title: 'Correct answer is : ' + toutN,
+						confirmButtonText: 'Try Again',
+						customClass: {
+							icon: 'custom-icon',
+							popup: 'custom-popup',
+							title: 'custom-title',
+							confirmButton: 'custom-confirm-button',
+							cancelButton: 'custom-cancel-button',
+						}
+					});
+
+
+				}
+
+			}
+			id++;
+		}
+		
 	})
-
-	$("#submit18").click(function() {
-		var tSteamTOutSub = hgTemp - tout;
-		var tcondTfeedSub = 60 - tfFeed;
-
-		var num = tSteamTOutSub - tcondTfeedSub;
-		var deno = Math.log(tSteamTOutSub / tcondTfeedSub);
-
-		logMean = (num / deno).toFixed(2);
-		logMean = parseFloat(logMean);
-
-		var logMeanEnter = $("#loagMean").val();
-
-		if (logMeanEnter == "" || logMeanEnter <= 0) {
-
-			Swal.fire({
-				icon: 'error',
-				title: 'Enter the value',
-				confirmButtonText: 'Ok',
-				customClass: {
-					icon: 'custom-icon',
-					popup: 'custom-popup',
-					title: 'custom-title',
-					confirmButton: 'custom-confirm-button',
-					cancelButton: 'custom-cancel-button',
-				}
-			});
-
-		} else {
-			logMeanEnter = parseFloat($("#loagMean").val());
-			if (id <= 3) {
-
-				if (logMeanEnter == logMean) {
-
-					$("#submit18").prop("disabled", true);
-					$("#loagMean").prop("disabled", true);
-					$("#saDiv").prop("hidden", false);
-					scrollToBottom();
-					id = 0;
-				} else if (logMeanEnter != logMean) {
-					steam1++;
-					Swal.fire({
-						icon: 'error',
-						title: 'Incorrect value',
-						confirmButtonText: 'Try Again',
-						customClass: {
-							icon: 'custom-icon',
-							popup: 'custom-popup',
-							title: 'custom-title',
-							confirmButton: 'custom-confirm-button',
-							cancelButton: 'custom-cancel-button',
-						}
-					});
-
-				}
-
-
-			} else if (id == 4) {
-steam1++;
-				Swal.fire({
-					title: 'Formula',
-					html: `<div>
-                    <img src='images/logMeanFormula.png' class='img-fluid' 
-                         style='border-style: double; border-color: black; display: block; margin: 10px auto; width: 100%; max-width: 1200px;'>
-               </div>`,
-					width: '40%',
-					confirmButtonText: 'Try Again',
-					customClass: {
-						icon: 'custom-icon',
-						popup: 'custom-popup',
-						title: 'custom-title',
-						confirmButton: 'custom-confirm-button',
-						cancelButton: 'custom-cancel-button',
-					}
-				});
-
-			} else {
-
-				if (logMeanEnter == logMean) {
-
-					$("#submit18").prop("disabled", true);
-					$("#loagMean").prop("disabled", true);
-					$("#saDiv").prop("hidden", false);
-					scrollToBottom();
-					id = 0;
-				} else {
-
-					Swal.fire({
-						icon: 'success',
-						title: 'Correct answer is : ' + logMean,
-						confirmButtonText: 'Try Again',
-						customClass: {
-							icon: 'custom-icon',
-							popup: 'custom-popup',
-							title: 'custom-title',
-							confirmButton: 'custom-confirm-button',
-							cancelButton: 'custom-cancel-button',
-						}
-					});
-
-
-				}
-
-			}
-			id++;
-		}
-
-
-	})
-
-	$("#submit16").click(function() {
-		var firstTerm = 1 / heatVal;
-		var secondTermNum = 0.0079 * Math.log(0.01067 / 0.0079);
-		var secondTerm = secondTermNum / 16.2;
-		var thirdTerm = 0.0079 / (0.01067 * hoVal);
-
-		var denoAdd = parseFloat(firstTerm) + parseFloat(secondTerm) + parseFloat(thirdTerm);
-		uoVal = (1 / denoAdd).toFixed(2);
-		uoVal = parseFloat(uoVal);
-
-		var uoValEnter = $("#overAll").val();
-
-		if (uoValEnter == "" || uoValEnter <= 0) {
-
-			Swal.fire({
-				icon: 'error',
-				title: 'Enter the value',
-				confirmButtonText: 'Ok',
-				customClass: {
-					icon: 'custom-icon',
-					popup: 'custom-popup',
-					title: 'custom-title',
-					confirmButton: 'custom-confirm-button',
-					cancelButton: 'custom-cancel-button',
-				}
-			});
-
-		} else {
-			uoValEnter = parseFloat($("#overAll").val());
-			if (id <= 3) {
-
-				if (uoValEnter == uoVal) {
-
-					$("#submit16").prop("disabled", true);
-					$("#overAll").prop("disabled", true);
-					$("#logDiv").prop("hidden", false);
-					scrollToBottom();
-					id = 0;
-				} else if (uoValEnter != uoVal) {
-					steam1++;
-					Swal.fire({
-						icon: 'error',
-						title: 'Incorrect value',
-						confirmButtonText: 'Try Again',
-						customClass: {
-							icon: 'custom-icon',
-							popup: 'custom-popup',
-							title: 'custom-title',
-							confirmButton: 'custom-confirm-button',
-							cancelButton: 'custom-cancel-button',
-						}
-					});
-
-				}
-
-
-			} else if (id == 4) {
-steam1++;
-				Swal.fire({
-					title: 'Formula',
-					html: `<div>
-                    <img src='images/uoFormula.png' class='img-fluid' 
-                         style='border-style: double; border-color: black; display: block; margin: 10px auto; width: 100%; max-width: 1200px;'>
-               </div>`,
-					width: '40%',
-					confirmButtonText: 'Try Again',
-					customClass: {
-						icon: 'custom-icon',
-						popup: 'custom-popup',
-						title: 'custom-title',
-						confirmButton: 'custom-confirm-button',
-						cancelButton: 'custom-cancel-button',
-					}
-				});
-
-			} else {
-
-				if (uoValEnter == uoVal) {
-
-					$("#submit16").prop("disabled", true);
-					$("#overAll").prop("disabled", true);
-					$("#logDiv").prop("hidden", false);
-					scrollToBottom();
-					id = 0;
-				} else {
-
-					Swal.fire({
-						icon: 'success',
-						title: 'Correct answer is : ' + uoVal,
-						confirmButtonText: 'Try Again',
-						customClass: {
-							icon: 'custom-icon',
-							popup: 'custom-popup',
-							title: 'custom-title',
-							confirmButton: 'custom-confirm-button',
-							cancelButton: 'custom-cancel-button',
-						}
-					});
-
-
-				}
-
-			}
-			id++;
-		}
-
-
-	});
-
-	$("#submit15").click(function() {
-		var sub = 983 - 1.9;
-		var cub = 0.73 * 0.73 * 0.73;
-		var num = (983 * sub * 9.81 * hfgVal * cub).toFixed(2);
-
-		num = parseFloat(num);
-
-		var sub1 = hgTemp - 129;
-		var mu = 0.4658 * Math.pow(10, -3);
-
-		var deno = (mu * 0.03 * sub1);
-		deno = parseFloat(deno);
-
-		var finDiv = num / deno;
-		var powerAdd = Math.pow(finDiv, 1 / 4);
-		hoVal = (powerAdd * 0.725).toFixed(2);
-		hoVal = parseFloat(hoVal);
-
-		var hoValEnter = $("#heatTrans").val();
-
-		if (hoValEnter == "" || hoValEnter <= 0) {
-
-			Swal.fire({
-				icon: 'error',
-				title: 'Enter the value',
-				confirmButtonText: 'Ok',
-				customClass: {
-					icon: 'custom-icon',
-					popup: 'custom-popup',
-					title: 'custom-title',
-					confirmButton: 'custom-confirm-button',
-					cancelButton: 'custom-cancel-button',
-				}
-			});
-
-		} else {
-			hoValEnter = parseFloat($("#heatTrans").val());
-			if (id <= 3) {
-
-				if (hoValEnter == hoVal) {
-
-					$("#submit15").prop("disabled", true);
-					$("#heatTrans").prop("disabled", true);
-					$("#overallDiv").prop("hidden", false);
-					scrollToBottom();
-					id = 0;
-				} else if (hoValEnter != hoVal) {
-					steam1++;
-					Swal.fire({
-						icon: 'error',
-						title: 'Incorrect value',
-						confirmButtonText: 'Try Again',
-						customClass: {
-							icon: 'custom-icon',
-							popup: 'custom-popup',
-							title: 'custom-title',
-							confirmButton: 'custom-confirm-button',
-							cancelButton: 'custom-cancel-button',
-						}
-					});
-
-				}
-
-
-			} else if (id == 4) {
-steam1++;
-				Swal.fire({
-					title: 'Formula',
-					html: `<div>
-                    <img src='images/hoFormula.png' class='img-fluid' 
-                         style='border-style: double; border-color: black; display: block; margin: 10px auto; width: 100%; max-width: 1200px;'>
-               </div>`,
-					width: '40%',
-					confirmButtonText: 'Try Again',
-					customClass: {
-						icon: 'custom-icon',
-						popup: 'custom-popup',
-						title: 'custom-title',
-						confirmButton: 'custom-confirm-button',
-						cancelButton: 'custom-cancel-button',
-					}
-				});
-
-			} else {
-
-				if (hoValEnter == hoVal) {
-
-					$("#submit15").prop("disabled", true);
-					$("#heatTrans").prop("disabled", true);
-					$("#overallDiv").prop("hidden", false);
-					id = 0;
-					scrollToBottom();
-				} else {
-
-					Swal.fire({
-						icon: 'success',
-						title: 'Correct answer is : ' + hoVal,
-						confirmButtonText: 'Try Again',
-						customClass: {
-							icon: 'custom-icon',
-							popup: 'custom-popup',
-							title: 'custom-title',
-							confirmButton: 'custom-confirm-button',
-							cancelButton: 'custom-cancel-button',
-						}
-					});
-
-
-				}
-
-			}
-			id++;
-		}
-
-
-	});
-
-
-	$("#refer3").click(function() {
-		let pageNumber = 5;
+	   
+	   $("#refer6").click(function(){
+		
+		
+		let pageNumber = 2;
 
 		Swal.fire({
 			title: 'PDF Viewer',
@@ -715,26 +723,28 @@ steam1++;
 				confirmButton: 'custom-confirm-button',
 				cancelButton: 'custom-cancel-button',
 			}
-		})
-	})
+		});
 
-	var arrhfg = [];
+	 
 	
-	var id = 1;
+		
+	})
+	   
+	   var id =1;
+	   
+	   $("#submit38").click(function(){
+		
+		 var arrhf1 = [83.91, 88.10, 92.28, 96.46, 100.65, 104.83, 109.01, 113.19, 117.37 , 121.55 , 125.73];
 
+	var start1 = 20;
+	var temp1 = tf1;
+	var index = temp1 - start1;
 
-	$("#submit14").click(function() {
-		arrhfg = [2173.7, 2170.8, 2167.9, 2165.0, 2162.1, 2159.1, 2156.2];
-		var start = 130;
-		var temp1 = hgTemp;
-
-		var index = temp1 - start;
-		hfgVal = arrhfg[index];
-		hfgVal = (hfgVal * 1000).toFixed(2);
-		hfgVal = parseFloat(hfgVal);
-
-		var hfgValEnter = $("#hfg").val();
-		if (hfgValEnter == "" || hfgValEnter <= 0) {
+	 hfValGet1 = arrhf1[index];
+	
+	var hfValGet1Enter = $("#hfFind1").val();
+	   
+	   if (hfValGet1Enter == "" || hfValGet1Enter <= 0) {
 
 			Swal.fire({
 				icon: 'error',
@@ -750,17 +760,20 @@ steam1++;
 			});
 
 		} else {
-			hfgValEnter = parseFloat($("#hfg").val());
+			
+			hfValGet1Enter = parseFloat($("#hfFind1").val());
+			
 			if (id <= 3) {
 
-				if (hfgValEnter == hfgVal) {
+				if (hfValGet1Enter == hfValGet1) {
 
-					$("#submit14").prop("disabled", true);
-					$("#hfg").prop("disabled", true);
-					$("#heatTrasDiv").prop("hidden", false);
+					$("#submit38").prop("disabled", true);
+					$("#hfFind1").prop("disabled", true);
+					$("#toDiv").prop("hidden", false);
+					scrollToBottom();
 					id = 0;
-				} else if (hfgValEnter != hfgVal) {
-					steam1++;
+				} else if (hfValGet1Enter != hfValGet1) {
+					finB3++;
 					Swal.fire({
 						icon: 'error',
 						title: 'Incorrect value',
@@ -778,8 +791,9 @@ steam1++;
 
 
 			} else if (id == 4) {
-				steam1++;
-				var pageNumber = 8;
+                finB3++;
+				let pageNumber = 2;
+
 				Swal.fire({
 					title: 'PDF Viewer',
 					html: `
@@ -798,17 +812,18 @@ steam1++;
 
 			} else {
 
-				if (hfgValEnter == hfgVal) {
+				if (hfValGet1Enter == hfValGet1) {
 
-					$("#submit14").prop("disabled", true);
-					$("#hfg").prop("disabled", true);
-					$("#heatTrasDiv").prop("hidden", false);
+					$("#submit38").prop("disabled", true);
+					$("#hfFind1").prop("disabled", true);
+					$("#toDiv").prop("hidden", false);
+					scrollToBottom();
 					id = 0;
 				} else {
 
 					Swal.fire({
 						icon: 'success',
-						title: 'Correct answer is : ' + hfgVal,
+						title: 'Correct answer is : ' + hfValGet1,
 						confirmButtonText: 'Try Again',
 						customClass: {
 							icon: 'custom-icon',
@@ -825,6 +840,17 @@ steam1++;
 			}
 			id++;
 		}
-	});
-
+	   
+		
+	})
+	
+	}
+	
+	function getRandomNumber(min, max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+	
+	
+	function getRandomNumber1(min, max) {
+    return +(Math.random() * (max - min) + min).toFixed(1);
 }
