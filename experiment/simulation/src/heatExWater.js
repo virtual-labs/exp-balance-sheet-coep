@@ -226,10 +226,12 @@ function water() {
 				if (heatValEnter == heatVal) {
 
 					$("#submit12").prop("disabled", true);
-					$("#heat").prop("disabled", true);
-					$("#nextl2").prop("hidden", false);
+					$("#heat").prop("disabled", true);					
 					id = 0;
 					scrollToBottom();
+					
+					 $("#nextl2").prop("hidden", false);
+					
 				} else if (heatValEnter != heatVal) {
 					heatEx++;
 					
@@ -274,9 +276,9 @@ function water() {
 
 					$("#submit12").prop("disabled", true);
 					$("#heat").prop("disabled", true);
-					$("#nextl2").prop("hidden", false);
 					id = 0;
 					scrollToBottom();
+					 $("#nextl2").prop("hidden", false);
 				} else {
 
 					Swal.fire({
@@ -291,7 +293,7 @@ function water() {
 							cancelButton: 'custom-cancel-button',
 						}
 					});
-
+                
 
 				}
 
