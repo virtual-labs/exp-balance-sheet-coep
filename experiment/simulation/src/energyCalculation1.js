@@ -6,11 +6,12 @@ var timerMasterJson = {};
 var resultJson = {};
 var enMass = 0;
 function energyMass() {
+	
     seconds = 0;
 	hgTemp = getRandomNumber(130, 136);
 	wfRate = getRandomNumber(200, 800);
 	tfFeed = getRandomNumber(20, 28);
-
+    
 	var label = "Steam generating capacity of the boiler is 30 kg/hr at " + hgTemp + "<sup>o</sup>C and 3.5 bar pressure. "
 
 		+ "Outlet water flow rate from heat exchanger is " + wfRate + " lit/hr. "
@@ -20,8 +21,8 @@ function energyMass() {
 
 	$("#statement").html(label);
 
-	var htm = '<div class="row justify-content-center" style="margin-top:-20px;display:flex;">'
-		+ '<div class="col-md-8 instruction-box1 " style="display:flex;">'
+	var htm = '<div class="row justify-content-center" style="margin-top:-20px;display:flex;" >'
+		+ '<div class="col-md-8 instruction-box1 " style="display:flex;" id="instructionBox">'
 		+ '<div class="col-5 ">'
 		+ '<label style="font-weight: 600;font-family: emoji;font-size: 20px;word-spacing: 1px;">Find the Enthalpy of steam h<sub>g</sub> (kJ/kg) : </label>'
 		+ '</div>'
@@ -125,7 +126,7 @@ function energyMass() {
 
 	var hgValGet = arrhg[index];
 
-
+   
 
 	//	console.log(arrhg[index]);  
 	var id = 1;
@@ -143,6 +144,7 @@ function energyMass() {
         timerMasterJson.energyTime = $("#counter").text();
 		console.log(timerMasterJson);
 		updateCounter();
+		scrollToBottom();
 	})
 
 	$("#submit5").click(function() {
@@ -278,6 +280,7 @@ function energyMass() {
 					$("#energy").prop("disabled", true);
 					$("#timediv").prop("hidden", false);
 					id = 0;
+					scrollToBottom();
 
 				} else if (qValEnter != qVal) {
 					enMass++;
@@ -324,6 +327,7 @@ function energyMass() {
 					$("#energy").prop("disabled", true);
 					$("#timediv").prop("hidden", false);
 					id = 0;
+					scrollToBottom();
 				} else {
 
 					Swal.fire({
