@@ -59,7 +59,11 @@ Re<sub>water</sub> = (V<sub>water</sub> × r<sub>1</sub> × 2 × ρ<sub>water</s
       
       ![tOutFormula](images/toutFormula.png) 
 
-- Select the appropriate to get T<sub>out</sub> to 60 <sup>o</sup>C and submit your answer    
+- Select the appropriate to get T<sub>out</sub> to 60 <sup>o</sup>C and submit your answer and click on '**Next**'
+
+
+- After completing the core analysis, proceed to the second part of the experiment, which involves an application-based question assigned to you individually. This question will relate to a real-world scenario such as the impact of fouling on heat transfer efficiency, subcooling in the condensate, or incomplete steam condensation. Use the formulae from Section 1 as the foundation for your analysis and extend them as needed to address the assigned scenario
+  
 - Click on '**Result**' for performance accessment
 
 
