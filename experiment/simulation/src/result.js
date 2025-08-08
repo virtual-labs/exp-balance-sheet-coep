@@ -1,7 +1,10 @@
 
 function result() {
-	console.log(resultJson);
-	console.log(timerMasterJson);
+	//console.log(resultJson);
+	//console.log(timerMasterJson);
+	const now = new Date();
+    const formatted = now.toLocaleString();
+	timerMasterJson.mimic=$("#counter").text();
 	$("#ecalculations").html("");
 	$("#startBtn,#getValues,#counter").prop("hidden", true);
 	$("#report").prop("hidden", false);
@@ -9,20 +12,20 @@ function result() {
 	$("#Header").html("<center><span >Energy Balance Sheet</span></center>");
 
 	htm = ''
-		+ '<div class="container-fluid" style="margin-top:50px;">'
+		+`<div class="row" id="divMis" style="background-color: #384d59; padding: 10px; display: flex; justify-content: center;">
+  <div style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+    <span style="color: white;font-weight: bold;">Enter Name:</span>
+    <input type="text" id="nameInput" style="color: #000; padding: 5px; max-width: 200px;">
+	<label id="dateTime1" style="color:#fff;">`+formatted+`</label>
+  </div>
+</div>`
+		+ '<div class="container-fluid">'
 
 		+ ' <!-- Title -->'
 
 		+ '  <h3 class="text-center heading P-5" style="background-color: #384d59;font-size: 30px; font-weight: 600;">Energy Balance Sheet</h3>'
 
-		+ '<div class="row mb-3" id="divMis" style="background-color: #384d59; padding: 5px; display: flex; justify-content: center;">'
-		+ '<div style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">'
-		+ '<span style="color: white;font-weight: bold; font-size: 22px;">Enter Name:</span>'
-		+ '<input type="text" id="nameInput" style="color: #000; padding: 5px; max-width: 200px;">'
-		+ '<label id="dateTime" style="color:#fff;"></label>'
 
-		+ '  </div>'
-		+ '</div>'
 
 		+ ' <!-- Competency Table -->'
 		+ ' <div class="box">'
